@@ -1,3 +1,181 @@
+$bg-color1: #233142;
+$bg-color2: #455d7a;
+$link-color1: #f95959;
+$link-color2: #fca5a5; // not in palette
+$text-color1: #e3e3e3;
+$text-color2: #ffffff; // not in palette
+
+html {
+  box-sizing: border-box;
+}
 body {
-  background-color: #888;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: $bg-color2;
+  color: $text-color1;
+}
+a {
+  color: $link-color1;
+  &:hover {
+    color: $link-color2;
+  }
+}
+
+.holygrail {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.holygrail-body {
+  display: flex;
+  flex: 1;
+}
+.holygrail-content {
+  flex: 1;
+}
+
+#navbar {
+  background: $bg-color1;
+  // width: 60px;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+
+  .logo {
+    border: 2px solid $bg-color2;
+    margin: 8px;
+    padding: 16px;
+    border-radius: 2px;
+    transition: all 0.3s ease-out;
+    &:hover {
+      border: 2px solid $link-color1;
+    }
+  }
+
+  .logo > img {
+    max-width: 48px;
+  }
+}
+
+ul.main-list,
+ul.profile-list {
+  list-style-type: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  li > a {
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    color: $bg-color2;
+
+    &:hover {
+      color: $link-color1;
+    }
+    &.active {
+      color: $link-color1;
+    }
+  }
+}
+
+ul.main-list > li > a {
+  font-size: 22px;
+  line-height: 51px;
+  // height: 51px;
+  // width: 51px;
+}
+
+ul.profile-list > li > a {
+  font-size: 15px;
+  line-height: 30px;
+  // height: 21px;
+  // width: 51px;
+}
+
+#home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: $text-color2;
+    font-size: 56px;
+    line-height: 53px;
+    margin: 0;
+    font-family: "Coolvetica";
+    font-weight: 400;
+
+    &:before {
+      content: "<h1>";
+      font-family: "La Belle Aurore", cursive;
+      color: $link-color1;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -40px;
+      margin-left: -15px;
+      opacity: 0.6;
+    }
+
+    &:after {
+      content: "<h1/>";
+      font-family: "La Belle Aurore", cursive;
+      color: $link-color1;
+      font-size: 18px;
+      position: absolute;
+      margin-top: 18px;
+      margin-left: 20px;
+      animation: fadeIn 1s 1.7s backwards;
+      opacity: 0.6;
+    }
+
+    img {
+      margin-left: 20px;
+      opacity: 0;
+      width: 32px;
+      height: auto;
+      animation: rotateIn 1s linear both;
+      animation-delay: 1.4s;
+    }
+  }
+
+  h2 {
+    color: $text-color1;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+  }
+}
+
+.tags {
+  color: $link-color1;
+  opacity: 0.6;
+  position: absolute;
+  left: 160px;
+  font-size: 18px;
+  font-family: "La Belle Aurore", cursive;
+}
+.top-tags {
+  top: 35px;
+}
+.bottom-tags {
+  bottom: 35px;
+}
+.bottom-tag-html {
+  margin-left: -20px;
+}
+
+.my-pic img {
+  max-width: 400px;
 }

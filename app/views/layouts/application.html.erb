@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <div class="holygrail">
+      <main class="holygrail-body">
+        <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
