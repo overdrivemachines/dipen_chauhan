@@ -1,24 +1,11 @@
-# README
+# My Personal Portfolio Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the code for my portfolio website: https://www.dipenchauhan.com
 
-Things you may want to cover:
+## Version
+- ruby 3.1.2
+- Rails 7.0.3.1
 
-* Ruby version
+## Setup Instructions
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment instructions
