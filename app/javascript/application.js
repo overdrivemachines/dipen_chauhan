@@ -6,4 +6,5 @@ import "jquery_ujs"
 import "@popperjs/core"
 import "bootstrap"
 import "@fortawesome/fontawesome-free"
-import "./my_script.js"
+
+import "my_script"
