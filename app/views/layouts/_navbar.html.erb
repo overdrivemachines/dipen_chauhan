@@ -1,13 +1,17 @@
 <nav id="navbar">
-  <a href="#" class="logo">
+  <%= link_to root_path, class: "logo" do %>
     <%= image_tag("logo.png") %>
-  </a>
+  <% end %>
   <ul class="main-list">
     <li>
-      <a href="#" class="active"><i class="fa-solid fa-house"></i></a>
+      <%= link_to root_path, class: "active" do %>
+        <i class="fa-solid fa-house"></i>
+      <% end %>
     </li>
     <li>
-      <a href="#"><i class="fa-solid fa-user"></i></a>
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-user"></i>
+      <% end %>
     </li>
     <li>
       <a href="#"><i class="fa-solid fa-briefcase"></i></a>
@@ -20,15 +24,19 @@
   </ul>
   <ul class="profile-list">
     <li>
-      <a href="#">
+      <%= link_to "https://www.linkedin.com/in/dipen-chauhan-5026a1143/", target: :_blank do %>
         <i class="fa-brands fa-linkedin"></i>
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="#"><i class="fa-brands fa-codepen"></i></a>
+      <%= link_to "https://codepen.io/overdrivemachines", target: :_blank do %>
+        <i class="fa-brands fa-codepen"></i>
+      <% end %>
     </li>
     <li>
-      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <%= link_to "https://github.com/overdrivemachines", target: :_blank do %>
+        <i class="fa-brands fa-github"></i>
+      <% end %>
     </li>
     <li>
       <a href="#"><i class="fa-brands fa-skype"></i></a>
