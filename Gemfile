@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-gem "rails", "~> 7.0.3", ">= 7.0.3.1"
+gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
@@ -11,13 +11,8 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
-
-# gem "bcrypt", "~> 3.1.7"
-# gem "image_processing", "~> 1.2"
-
 gem "sassc-rails"
 gem "bootstrap", "~> 5.2.0"
-gem "jquery-rails"
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"
@@ -46,7 +41,7 @@ end
 
 group :production do
   gem "pg", "1.4.2"
-  gem "aws-sdk-s3", "1.114.0", require: false
+  # gem "aws-sdk-s3", "1.114.0", require: false
 end
 
 # Install the local gems while preventing the installation of production gems

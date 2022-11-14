@@ -7,8 +7,8 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 
 # From "jquery-rails" gem
-pin "jquery", to: "jquery3.min.js", preload: true
-pin "jquery_ujs", to: "jquery_ujs.js", preload: true
+# pin "jquery", to: "jquery3.min.js", preload: true
+# pin "jquery_ujs", to: "jquery_ujs.js", preload: true
 
 # From "bootstrap" gem
 pin "bootstrap", to: "bootstrap.min.js", preload: true
