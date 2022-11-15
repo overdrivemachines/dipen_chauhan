@@ -1,3 +1,11 @@
+# == Route Map
+#
+#         Prefix Verb URI Pattern               Controller#Action
+#           root GET  /                         home#index
+#     home_about GET  /home/about(.:format)     home#about
+# home_portfolio GET  /home/portfolio(.:format) home#portfolio
+#   home_contact GET  /home/contact(.:format)   home#contact
+
 Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/about'

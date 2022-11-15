@@ -5,13 +5,14 @@ $link-color2: #fca5a5; // not in palette
 $text-color1: #e3e3e3;
 $text-color2: #ffffff; // not in palette
 
+/* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: row;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -25,18 +26,17 @@ a {
   }
 }
 
-.holygrail {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.content-wrapper {
+  margin-left: 100px;
 }
 
-.holygrail-body {
-  display: flex;
-  flex: 1;
-}
-.holygrail-content {
-  flex: 1;
+section {
+  min-height: 100vh;
+  overflow: auto;
+  // overflow: auto is required
+  // Otherwise bottom margins inside
+  // a section will not increase the
+  // height of the section accordingly
 }
 
 /////////////////////////////////////////////////////
@@ -44,8 +44,10 @@ a {
 /////////////////////////////////////////////////////
 
 #navbar {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
   background: $bg-color1;
-  // width: 60px;
   color: #888;
   display: flex;
   flex-direction: column;
@@ -107,47 +109,20 @@ ul.profile-list > li > a {
   // width: 51px;
 }
 
-@media (max-width: 1200px) {
-  body {
-    flex-direction: column;
-  }
-  #navbar {
-    flex-direction: row;
-    .logo {
-      padding: 12px;
-    }
-    .logo > img {
-      max-width: 32px;
-    }
-  }
-
-  .logo > img {
-    max-width: 32px;
-  }
-  ul.main-list,
-  ul.profile-list {
-    // border: 1px solid green;
-    text-align: right;
-    padding-right: 24px;
-    li {
-      display: inline-block;
-      padding: 5px 10px;
-    }
-  }
-  ul.profile-list {
-    display: none;
-  }
-}
-
 /////////////////////////////////////////////////////
 // HOMEPAGE
 /////////////////////////////////////////////////////
 
 #home-page {
-  margin-top: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .text-zone {
+    padding-left: 5em;
+    padding-right: 1em;
+    font-size: 16px;
+  }
 
   h1 {
     color: $text-color2;
@@ -200,21 +175,6 @@ ul.profile-list > li > a {
   }
 }
 
-@media (max-width: 1200px) {
-  #home-page {
-    margin-top: 56px;
-  }
-
-  span.top-tags {
-    top: 138px;
-    left: 10px;
-  }
-
-  span.bottom-tags {
-    left: 10px;
-  }
-}
-
 .tags {
   color: $link-color1;
   opacity: 0.6;
@@ -236,3 +196,77 @@ ul.profile-list > li > a {
 .my-pic img {
   max-width: 400px;
 }
+
+
+@media (max-width: 1200px) {
+
+  #navbar {
+    top: 0;
+    width: 100%;
+    height: 100px;
+
+    flex-direction: row;
+    .logo {
+      padding: 12px;
+    }
+    .logo > img {
+      max-width: 32px;
+    }
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+    margin-top: 100px;
+  }
+
+  section {
+    min-height: calc(100vh - 100px);
+  }
+
+  .logo > img {
+    max-width: 32px;
+  }
+  ul.main-list,
+  ul.profile-list {
+    // border: 1px solid green;
+    text-align: right;
+    padding-right: 24px;
+    li {
+      display: inline-block;
+      padding: 5px 10px;
+    }
+  }
+  ul.profile-list {
+    display: none;
+  }
+
+  span.top-tags {
+    top: 138px;
+    left: 10px;
+  }
+
+  span.bottom-tags {
+    left: 10px;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  #home-page {
+    .text-zone {
+      padding-left: 1em;
+    }
+  }
+}
+
+
+/////////////////////////////////////////////////////
+// PORTFOLIO
+/////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////
+// CONTACT
+/////////////////////////////////////////////////////
+
