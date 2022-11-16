@@ -14,12 +14,14 @@
       <% end %>
     </li>
     <li>
-      <a href="#"><i class="fa-solid fa-briefcase"></i></a>
+      <%= link_to home_portfolio_path do %>
+        <i class="fa-solid fa-briefcase"></i>
+      <% end %>
     </li>
     <li>
-      <a href="#">
+      <%= link_to home_contact_path do %>
         <i class="fa-solid fa-envelope"></i>
-      </a>
+      <% end %>
     </li>
   </ul>
   <ul class="profile-list">

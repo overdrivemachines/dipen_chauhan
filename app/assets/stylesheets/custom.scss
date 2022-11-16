@@ -11,7 +11,9 @@ $text-color2: #ffffff; // not in palette
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 body {
@@ -41,7 +43,71 @@ section {
   // height of the section accordingly
 }
 
+h1 {
+  color: $text-color2;
+  font-size: 56px;
+  line-height: 53px;
+  margin-top: 0.667em;
+  font-family: "Coolvetica";
+  font-weight: 400;
 
+  &:before {
+    content: "<h1>";
+    font-family: "La Belle Aurore", cursive;
+    color: $link-color1;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -15px;
+    opacity: 0.6;
+  }
+
+  &:after {
+    content: "<h1/>";
+    font-family: "La Belle Aurore", cursive;
+    color: $link-color1;
+    font-size: 18px;
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 20px;
+    animation: fadeIn 1s 1.7s backwards;
+    opacity: 0.6;
+  }
+
+  img {
+    margin-left: 20px;
+    opacity: 0;
+    width: 32px;
+    height: auto;
+    animation: rotateIn 1s linear both;
+    animation-delay: 1.4s;
+  }
+}
+
+h2 {
+  color: $text-color1;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: sans-serif;
+  letter-spacing: 3px;
+}
+
+section .sub {
+  padding: 2.667em;
+  border-left: 1px solid red;
+  // margin-left: 7vw;
+  // margin-top: 1.667em;
+
+  margin: 1.667em 1em 1.667em 7vw;
+  h2 {
+    font-size: 1.25em;
+  }
+}
+
+section .title {
+  margin-top: 3.33em;
+}
 
 /////////////////////////////////////////////////////
 // NAVBAR
@@ -127,56 +193,6 @@ ul.profile-list > li > a {
     padding-right: 1em;
     font-size: 16px;
   }
-
-  h1 {
-    color: $text-color2;
-    font-size: 56px;
-    line-height: 53px;
-    margin: 0;
-    font-family: "Coolvetica";
-    font-weight: 400;
-
-    &:before {
-      content: "<h1>";
-      font-family: "La Belle Aurore", cursive;
-      color: $link-color1;
-      font-size: 18px;
-      position: absolute;
-      margin-top: -40px;
-      margin-left: -15px;
-      opacity: 0.6;
-    }
-
-    &:after {
-      content: "<h1/>";
-      font-family: "La Belle Aurore", cursive;
-      color: $link-color1;
-      font-size: 18px;
-      position: absolute;
-      margin-top: 18px;
-      margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
-      opacity: 0.6;
-    }
-
-    img {
-      margin-left: 20px;
-      opacity: 0;
-      width: 32px;
-      height: auto;
-      animation: rotateIn 1s linear both;
-      animation-delay: 1.4s;
-    }
-  }
-
-  h2 {
-    color: $text-color1;
-    margin-top: 20px;
-    font-weight: 400;
-    font-size: 12px;
-    font-family: sans-serif;
-    letter-spacing: 3px;
-  }
 }
 
 .tags {
@@ -203,11 +219,10 @@ ul.profile-list > li > a {
 
 .my-pic img {
   max-width: 400px;
+  border-radius: 16px;
 }
 
-
 @media (max-width: 1200px) {
-
   #navbar {
     top: 0;
     width: 100%;
@@ -236,7 +251,6 @@ ul.profile-list > li > a {
   }
   ul.main-list,
   ul.profile-list {
-    // border: 1px solid green;
     text-align: right;
     padding-right: 24px;
     li {
@@ -258,7 +272,6 @@ ul.profile-list > li > a {
   }
 }
 
-
 @media (max-width: 1100px) {
   #home-page {
     .text-zone {
@@ -268,27 +281,45 @@ ul.profile-list > li > a {
 }
 
 @media (max-width: 768px) {
-  .text-zone {
+  #home-page .row {
+    flex-direction: column-reverse;
     height: calc(100vh - 100px);
+    justify-content: center;
+  }
+  .text-zone {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    h1, h2, .btn-primary {
+    h1,
+    h2,
+    .btn-primary {
       width: 100%;
     }
   }
-}
 
+  .my-pic {
+    text-align: center;
+  }
+  .my-pic img {
+    width: 33vw;
+  }
+}
 
 /////////////////////////////////////////////////////
 // PORTFOLIO
 /////////////////////////////////////////////////////
-
-
+.filter-list {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+}
+.filter {
+  padding: 1em;
+  text-decoration: underline;
+}
 
 /////////////////////////////////////////////////////
 // CONTACT
 /////////////////////////////////////////////////////
-
