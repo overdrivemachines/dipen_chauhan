@@ -5,6 +5,8 @@ $link-color2: #fca5a5; // not in palette
 $text-color1: #e3e3e3;
 $text-color2: #ffffff; // not in palette
 
+// Layout testing: https://codepen.io/overdrivemachines/pen/MWXovmb
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -38,6 +40,8 @@ section {
   // a section will not increase the
   // height of the section accordingly
 }
+
+
 
 /////////////////////////////////////////////////////
 // NAVBAR
@@ -178,19 +182,23 @@ ul.profile-list > li > a {
 .tags {
   color: $link-color1;
   opacity: 0.6;
-  position: absolute;
-  left: 160px;
+  position: fixed;
+  left: 10vw;
   font-size: 18px;
   font-family: "La Belle Aurore", cursive;
 }
 .top-tags {
-  top: 35px;
+  top: 3vh;
 }
 .bottom-tags {
-  bottom: 35px;
+  bottom: 3vh;
 }
 .bottom-tag-html {
   margin-left: -20px;
+}
+
+.my-pic {
+  text-align: center;
 }
 
 .my-pic img {
@@ -241,12 +249,12 @@ ul.profile-list > li > a {
   }
 
   span.top-tags {
-    top: 138px;
-    left: 10px;
+    top: 110px;
+    left: 20px;
   }
 
   span.bottom-tags {
-    left: 10px;
+    left: 20px;
   }
 }
 
@@ -255,6 +263,20 @@ ul.profile-list > li > a {
   #home-page {
     .text-zone {
       padding-left: 1em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .text-zone {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1, h2, .btn-primary {
+      width: 100%;
     }
   }
 }
