@@ -2,6 +2,12 @@
 
 This is the code for my portfolio website: https://www.dipenchauhan.com
 
+# TODO
+
+- Add/remove projects with images
+- Sign in single user
+- Auto add projects from my github
+
 ## Version
 
 - ruby 3.1.2

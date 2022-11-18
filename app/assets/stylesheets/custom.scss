@@ -21,7 +21,7 @@ body {
   font-family: "Coolvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-color: $bg-color2;
+  background: $bg-color2;
   color: $text-color1;
 }
 a {
@@ -189,6 +189,12 @@ ul.profile-list > li > a {
   justify-content: center;
   align-items: center;
 
+  background: image-url("code2-slider-bg1.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   .text-zone {
     padding-left: 5em;
     padding-right: 1em;
@@ -321,10 +327,12 @@ ul.profile-list > li > a {
   cursor: pointer;
   font-size: 1.33em;
   font-family: "Coolvetica", sans-serif;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
 
   &.active,
   &:hover {
-    border-bottom: 1px solid $link-color1;
+    border-color: $link-color1;
     color: $link-color1;
   }
 }
@@ -333,15 +341,17 @@ ul.profile-list > li > a {
   // border: 1px solid $link-color1;
   display: block;
   text-decoration: none;
+  color: $text-color1;
   // padding: 1em;
   // overflow: hidden;
   margin-bottom: 2.66em;
   figure {
     overflow: hidden;
+    text-align: center;
+    height: 300px;
   }
 
   img {
-    display: block;
     max-width: 100%;
     height: 300px;
 
@@ -349,6 +359,10 @@ ul.profile-list > li > a {
     transform: scale(1);
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: $text-color1;
   }
 
   &:hover img {
@@ -359,12 +373,13 @@ ul.profile-list > li > a {
 
 .project-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
-  .project-name {
+  .project-title {
     font-size: 1.25em;
     flex: 1;
     padding-right: 1em;
+    margin-top: 0;
   }
 
   .badge {
