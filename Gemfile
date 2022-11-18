@@ -13,6 +13,7 @@ gem "jbuilder"
 gem "bootsnap", require: false
 gem "sassc-rails"
 gem "bootstrap", "~> 5.2.0"
+gem "image_processing", ">= 1.2"
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"

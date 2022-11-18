@@ -7,6 +7,7 @@
 #   home_contact GET  /home/contact(.:format)   home#contact
 
 Rails.application.routes.draw do
+  resources :projects
   root to: 'home#index'
   get 'home/about'
   get 'home/portfolio'
