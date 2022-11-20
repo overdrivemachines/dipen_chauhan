@@ -26,6 +26,9 @@ group :development do
   gem "annotate"
   # Generate Entity-Relationship Diagrams
   gem "rails-erd"
+
+  # Format ERB Files
+  gem "erb-formatter"
 end
 
 group :test do
