@@ -16,6 +16,31 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+:not(.skip-link):focus {
+  outline: 5px solid $text-color1;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+  outline: none;
+  // hide it at the top of the page
+  translate: 0 -100%;
+  transition: translate 150ms ease-in-out;
+}
+
+.skip-link:focus {
+  // remove the previous translate
+  translate: 0;
+}
+
 body {
   font-size: 16px;
   font-family: "Coolvetica", sans-serif;
