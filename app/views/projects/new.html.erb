@@ -1,9 +1,19 @@
-<h1>New project</h1>
+<section class="portfolio-page">
+  <div class="container">
 
-<%= render "form", project: @project %>
+    <div class="row">
+      <div class="title">
+        <h1>New Portfolio</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mt-3">
+        <%= render "form", project: @project %>
+      </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to projects", projects_path %>
-</div>
+      <div>
+        <%= link_to "Back to projects", projects_path %>
+      </div>
+    </div>
+  </div>
+</section>

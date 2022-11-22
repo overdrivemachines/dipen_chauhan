@@ -1,14 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<section class="portfolio-page">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <h1>My Portfolio</h1>
+        <div class="sub">
+          <h2>A collection of my favorite projects I have worked on recently. I
+            feel great to share them here.</h2>
+        </div>
+      </div>
 
-<h1>Projects</h1>
+    </div>
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
-</div>
+    <%= link_to "Add New Project", new_project_path, class: "btn btn-primary" %>
 
-<%= link_to "New project", new_project_path %>
+    <p style="color: green"><%= notice %></p>
+    <ul class="filter-list">
+      <li class="filter active">All</li>
+      <li class="filter">Ruby on Rails</li>
+      <li class="filter">JavaScript</li>
+      <li class="filter">C++</li>
+    </ul>
+
+    <div class="porfolio-gallery">
+      <div class="row">
+        <% @projects.each do |project| %>
+          <%= render project %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,22 +1,19 @@
-<div id="<%= dom_id project %>">
-  <p>
-    <strong>Title:</strong>
-    <%= project.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
+<%= link_to project.url, class: "col-md-6 col-lg-4 project-container", target: "_blank" do %>
+  <figure>
+    <%# TODO: image_tag %>
+    <% if project.image.persisted? %>
+      <%= image_tag(project.image) %>
+    <% else %>
+      <img src="https://designshack.net/wp-content/uploads/placeholder-image.png">
+    <% end %>
+  </figure>
+  <div class="project-info">
+    <h2 class="project-title"><%= project.title %></h2>
+    <div class="badge-container">
+      <span class="badge rounded-pill">Ruby on Rails</span>
+    </div>
+  </div>
+  <div class="project-description">
     <%= project.description %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= project.url %>
-  </p>
-
-  <p>
-    <strong>Display order:</strong>
-    <%= project.display_order %>
-  </p>
-
-</div>
+  </div>
+<% end %>
