@@ -369,6 +369,8 @@ ul.profile-list > li > a {
   color: $text-color1;
   // padding: 1em;
   // overflow: hidden;
+  // width: 100%;
+  padding: 1em;
   margin-bottom: 2.66em;
   figure {
     overflow: hidden;
@@ -378,7 +380,7 @@ ul.profile-list > li > a {
 
   img {
     max-width: 100%;
-    height: 300px;
+    // height: 300px;
 
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -411,6 +413,13 @@ ul.profile-list > li > a {
     font-size: 1.25em;
     background: $link-color1;
     font-weight: normal;
+  }
+}
+
+.project-actions {
+  margin: 0.667em 0;
+  a {
+    margin-right: 1em;
   }
 }
 

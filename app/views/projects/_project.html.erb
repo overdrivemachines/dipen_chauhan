@@ -1,12 +1,13 @@
-<%= link_to project.url, class: "col-md-6 col-lg-4 project-container", target: "_blank" do %>
-  <figure>
-    <%# TODO: image_tag %>
-    <% if project.image.persisted? %>
-      <%= image_tag(project.image) %>
-    <% else %>
-      <img src="https://designshack.net/wp-content/uploads/placeholder-image.png">
-    <% end %>
-  </figure>
+<div class="col-md-6 col-lg-4 project-container">
+  <%= link_to project.url, target: "_blank" do %>
+    <figure>
+      <% if project.image.persisted? %>
+        <%= image_tag(project.image) %>
+      <% else %>
+        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png">
+      <% end %>
+    </figure>
+  <% end %>
   <div class="project-info">
     <h2 class="project-title"><%= project.title %></h2>
     <div class="badge-container">
@@ -16,4 +17,10 @@
   <div class="project-description">
     <%= project.description %>
   </div>
-<% end %>
+
+  <div class="project-actions">
+    <%= link_to "Edit", edit_project_path(project) %>
+    <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+  </div>
+
+</div>
