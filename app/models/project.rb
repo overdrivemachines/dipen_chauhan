@@ -12,4 +12,7 @@
 #
 class Project < ApplicationRecord
   has_one_attached :image
+
+  validates :title, :description, :url, presence: true
+  validates :url, url: true # using validate_url gem
 end

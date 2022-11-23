@@ -14,6 +14,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 gem "bootstrap", "~> 5.2.0"
 gem "image_processing", ">= 1.2"
+gem "validate_url" # adds the capability of validating URLs to ActiveRecord and ActiveModel.
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"
