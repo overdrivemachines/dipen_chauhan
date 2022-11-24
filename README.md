@@ -123,4 +123,5 @@ passenger-config restart-app
   - https://themeforest.net/item/reframe-personal-one-page-portfolio-html-template/33840600
   - https://harnishdesign.net/demo/html/simone/index-dark-classic-header.html
   - https://themes.muffingroup.com/be/code2/ <---
-- Add pictures in Rails: https://www.youtube.com/watch?v=1cw6qO1EYGw&t=221s
+- Add pictures in Rails: https://www.youtube.com/watch?v=1cw6qO1EYGw
+- Nav bar active css - https://gist.github.com/mynameispj/5692162
