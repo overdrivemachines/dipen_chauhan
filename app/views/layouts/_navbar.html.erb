@@ -3,8 +3,8 @@
     <%= image_tag("logo.png") %>
   <% end %>
   <ul class="main-list">
-    <li>
-      <%= link_to root_path, class: "active" do %>
+    <li class="<%= active?("/") %>">
+      <%= link_to root_path do %>
         <i class="fa-solid fa-house"></i>
       <% end %>
     </li>
@@ -13,17 +13,17 @@
         <i class="fa-solid fa-user"></i>
       <% end %>
     </li>
-    <li>
+    <li class="<%= active?("/home/portfolio") %>">
       <%= link_to home_portfolio_path do %>
         <i class="fa-solid fa-briefcase"></i>
       <% end %>
     </li>
-    <li>
+    <li class="<%= active?("/projects") %>">
       <%= link_to projects_path do %>
         <i class="fa-solid fa-briefcase"></i>
       <% end %>
     </li>
-    <li>
+    <li class="<%= active?("/home/contact") %>">
       <%= link_to home_contact_path do %>
         <i class="fa-solid fa-envelope"></i>
       <% end %>
@@ -47,6 +47,9 @@
     </li>
     <li>
       <a href="#"><i class="fa-brands fa-skype"></i></a>
+    </li>
+    <li>
+      <%= link_to "Login", login_path %>
     </li>
   </ul>
 </nav>

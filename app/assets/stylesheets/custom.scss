@@ -185,9 +185,10 @@ ul.profile-list {
     &:hover {
       color: $link-color1;
     }
-    &.active {
-      color: $link-color1;
-    }
+  }
+
+  li.active a {
+    color: $link-color1;
   }
 }
 
