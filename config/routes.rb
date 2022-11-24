@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/portfolio'
   get 'home/contact'
+
+  # Login
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
 end
