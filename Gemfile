@@ -31,6 +31,9 @@ group :development do
 
   # Format ERB Files
   gem "erb-formatter"
+
+  # Preview emails
+  gem "letter_opener"
 end
 
 group :test do
