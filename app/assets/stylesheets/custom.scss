@@ -222,9 +222,11 @@ ul.profile-list > li > a {
   background-size: cover;
 
   .text-zone {
-    padding-left: 5em;
+    display: flex;
     padding-right: 1em;
     font-size: 16px;
+    // justify-content: space-between;
+    flex-direction: column;
   }
 }
 
@@ -252,10 +254,11 @@ ul.profile-list > li > a {
 
 .my-pic img {
   max-width: 400px;
+  width: 100%;
   border-radius: 16px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   #navbar {
     top: 0;
     width: 100%;
@@ -428,11 +431,19 @@ ul.profile-list > li > a {
 // LOGIN
 /////////////////////////////////////////////////////
 #sessions-page {
-  .form-container {
+  .form-container,
+  .message-container {
     margin-top: 2em;
+    border: 2px solid $bg-color1;
+    padding: 1.667em;
+    border-radius: 4px;
   }
   .form-text {
     color: $bg-color1;
+  }
+
+  p {
+    font-size: 1.25em;
   }
 }
 

@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
     end
 
     # Redirect to page stating that email was sent
-    redirect_to message_sessions_path,
+    flash[:title] = "Notice"
+    redirect_to sessions_message_path,
                 notice: "If an account for your email exists, the login link has been emailed to you."
   end
 
