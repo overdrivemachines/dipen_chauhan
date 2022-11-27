@@ -15,6 +15,7 @@
 #            login GET    /login(.:format)             sessions#new
 #                  POST   /login(.:format)             sessions#create
 #           logout DELETE /logout(.:format)            sessions#destroy
+#    sessions_edit GET    /sessions/edit(.:format)     sessions#edit
 # sessions_message GET    /sessions/message(.:format)  sessions#message
 
 Rails.application.routes.draw do
@@ -24,9 +25,10 @@ Rails.application.routes.draw do
   get 'home/portfolio'
   get 'home/contact'
 
-  # Login
+  # Login / Sessions
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "sessions/:id/edit", to: "sessions#edit", as: "edit_session" # login link
   get "sessions/message"
 end

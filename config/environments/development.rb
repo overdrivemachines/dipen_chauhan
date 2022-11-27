@@ -71,8 +71,11 @@ Rails.application.configure do
   # Enable Inline Source Maps
   config.sass.inline_source_maps = true
 
+  host = "localhost:3000"
+  config.action_mailer.default_url_options = { host:, protocol: 'http' }
+
   # letter_opener gem configuration: https://github.com/ryanb/letter_opener
-  # Now any email will pop up in your browser instead of being sent. 
+  # Now any email will pop up in your browser instead of being sent.
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
 end

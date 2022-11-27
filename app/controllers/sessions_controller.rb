@@ -11,8 +11,10 @@ class SessionsController < ApplicationController
 
     # if user exists send the login email
     if user
+      user.login_token = User.new_token
+      user.save
       # Send email to user
-      UserMailer.account_login(user)
+      UserMailer.account_login(user).deliver_now
     end
 
     # Redirect to page stating that email was sent

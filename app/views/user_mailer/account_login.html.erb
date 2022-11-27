@@ -1,4 +1,4 @@
-<h1>Dipen Chauhan Portfolio</h1>
+<h1>Dipen Chauhan's Portfolio</h1>
 
 <p>
   Click the link below to sign in to your account.
@@ -8,6 +8,7 @@
   This link will expire in 2 hours and can only be used once.
 </p>
 <%# Add Login Button %>
+<%= link_to "Login", edit_session_url(@user.login_token, email: @user.email), class: "btn btn-primary" %>
 
 <p>
   If the button above doesn't work, paste this link into your web browser:
