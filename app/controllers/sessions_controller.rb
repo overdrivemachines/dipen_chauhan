@@ -39,13 +39,16 @@ class SessionsController < ApplicationController
   # Edit action gets called when user clicks on activation link in email
   # e.g. link: http://localhost:3000/sessions/ChCkiCMDIodAi6uG8-aYEw/edit?email=c%40c.com
   # Has no template
-  # Checks for validity of email and token.
-  # Checks for token expiry
+  # Checks if email and login token combination are valid
+  # Checks if login token is expired
   # Logs the user in and redirects to the projects page
   def edit
     user = User.find_by(email: params[:email])
     token = params[:id]
 
+    # if user exists and if token is valid, login the user
+    # authenticate_login(token) checks if the token is valid
+    # it is a bcrypt method
     if user && user.authenticate_login(token)
       # Check for login link expiry
       if user.login_sent_at < 2.hours.ago
@@ -53,7 +56,9 @@ class SessionsController < ApplicationController
         redirect_to sessions_message_path,
                     notice: "Login link is expired. Please get a new link and try again. Login links expire after 2 hours."
       end
-      # TODO: login user
+      # Login the user
+      # log_in defined in sessions_helper.rb
+      log_in(user)
       flash[:success] = "Account Logged In!"
       redirect_to projects_path
     else
@@ -64,7 +69,9 @@ class SessionsController < ApplicationController
   end
 
   # GET /sessions/message
-  def message; end
+  def message
+    redirect_to root_path if flash[:title].nil?
+  end
 
   # Logout
   # DELETE /logout

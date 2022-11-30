@@ -15,7 +15,7 @@
 #            login GET    /login(.:format)             sessions#new
 #                  POST   /login(.:format)             sessions#create
 #           logout DELETE /logout(.:format)            sessions#destroy
-#    sessions_edit GET    /sessions/edit(.:format)     sessions#edit
+#     edit_session GET    /sessions/:id/edit(.:format) sessions#edit
 # sessions_message GET    /sessions/message(.:format)  sessions#message
 
 Rails.application.routes.draw do

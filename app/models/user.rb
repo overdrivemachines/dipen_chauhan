@@ -11,6 +11,7 @@
 #  remember_digest :string
 #  login_digest    :string
 #  login_sent_at   :string
+#  reset_sent_at   :datetime
 #
 class User < ApplicationRecord
   attr_accessor :login_token

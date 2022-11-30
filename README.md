@@ -109,6 +109,14 @@ passenger-config restart-app
 
 - Add Custom Fonts to `vendor/assets/fonts`. The path is automatically added to `Rails.application.config.assets.paths`. Verify in Rails Console.
 
+## Authentication
+
+- when a user logs in, make a 'remember me' cookie with a long expiration date
+- if there is a session cookie, use that
+- if not, check if we have a remember-me cookie
+  - if so, check if that value is valid (not tampered with)
+    - if so, look up that user, and set a new session cookie
+
 ## References
 
 - Add Custom Fonts

@@ -11,6 +11,7 @@
 #  remember_digest :string
 #  login_digest    :string
 #  login_sent_at   :string
+#  reset_sent_at   :datetime
 #
 require "test_helper"
 
