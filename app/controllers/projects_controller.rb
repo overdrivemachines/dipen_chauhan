@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ edit update destroy ]
+  before_action :authenticate_user!, except: :index
 
   # GET /projects
   def index

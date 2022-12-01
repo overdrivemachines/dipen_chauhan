@@ -25,17 +25,34 @@ module SessionsHelper
   # Returns the current logged-in user (if any)
   def current_user
     # Check if session[:user_id] is present
-    return unless user_id == session[:user_id]
+    user_id = session[:user_id]
+    return if user_id.nil?
 
     # get the user having id as user_id
     user = User.find_by(id: user_id)
+    return if user.nil?
 
     # if user and login_token combination is valid
     @current_user = user if user&.authenticate_login(session[:login_token])
   end
 
+  # if user is not logged in redirect to login page
+  def authenticate_user!
+    return unless current_user.nil?
+
+    redirect_to login_path
+  end
+
+  # return true if user is signed in
+  # return false if user is not signed in
+  def user_signed_in?
+    return true if current_user
+
+    false
+  end
+
   def log_out
     session.delete(:user_id)
-    session.delete(:remember_digest)
+    session.delete(:login_token)
   end
 end
