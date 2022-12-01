@@ -12,7 +12,16 @@
 #
 class Project < ApplicationRecord
   has_one_attached :image
+  before_save :remove_space
 
   validates :title, :description, :url, presence: true
   validates :url, url: true # using validate_url gem
+
+  private
+
+  def remove_space
+    title.strip
+    description.strip
+    url.strip
+  end
 end
