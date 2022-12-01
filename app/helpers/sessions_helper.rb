@@ -54,5 +54,10 @@ module SessionsHelper
   def log_out
     session.delete(:user_id)
     session.delete(:login_token)
+    if !current_user.nil?
+      @current_user.login_digest = nil
+      @current_user.login_sent_at = nil
+      @current_user.save
+    end
   end
 end

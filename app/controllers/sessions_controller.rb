@@ -75,5 +75,9 @@ class SessionsController < ApplicationController
 
   # Logout
   # DELETE /logout
-  def destroy; end
+  def destroy
+    # defined in session_helper.rb
+    log_out
+    redirect_back(fallback_location: root_path)
+  end
 end
