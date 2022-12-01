@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
   # Display login form
   # GET /login
-  def new; end
+  def new
+    redirect_back(fallback_location: root_path) if user_signed_in?
+  end
 
   # Login form has submitted/posted
   # POST /login

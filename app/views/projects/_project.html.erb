@@ -4,7 +4,7 @@
       <% if project.image.persisted? %>
         <%= image_tag(project.image) %>
       <% else %>
-        <img src="https://designshack.net/wp-content/uploads/placeholder-image.png">
+        <%= image_tag "placeholder.webp" %>
       <% end %>
     </figure>
   <% end %>
