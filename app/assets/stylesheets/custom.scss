@@ -67,6 +67,11 @@ section {
   // Otherwise bottom margins inside
   // a section will not increase the
   // height of the section accordingly
+
+  .notice {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
 }
 
 h1 {
@@ -352,17 +357,38 @@ ul.profile-list > li > a {
   width: 100%;
 }
 .filter {
-  padding: 0.6em 1em;
   cursor: pointer;
   font-size: 1.33em;
   font-family: "Coolvetica", sans-serif;
   transition: all 0.3s ease-in-out;
   border-bottom: 1px solid transparent;
+  text-align: center;
 
   &.active,
   &:hover {
     border-color: $link-color1;
     color: $link-color1;
+  }
+
+  a {
+    padding: 0.6em 1em;
+    text-decoration: none;
+    display: block;
+  }
+
+  .edit-link {
+    font-size: 0.667em;
+  }
+}
+
+.filter-edit {
+  .filter a {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .filter .edit-link {
+    padding-bottom: 0.6em;
   }
 }
 
