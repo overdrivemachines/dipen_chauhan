@@ -13,17 +13,30 @@
 
     <%= link_to "Add New Project", new_project_path, class: "btn btn-primary" %>
 
-    <p style="color: green"><%= notice %></p>
-    <ul class="filter-list">
-      <li class="filter active"><%= link_to "All", projects_path(category: :all) %></li>
-      <li class="filter"><%= link_to "Ruby on Rails", projects_path(category: :rails) %>
-        | Edit</li>
-      <li class="filter"><%= link_to "JavaScript", projects_path(category: :js) %>
-        | Edit</li>
-      <li class="filter"><%= link_to "C++", projects_path(category: :cpp) %>
-        | Edit</li>
-      <li class="filter">+</li>
-    </ul>
+    <p style="color: green"><%= notice %>
+      <%= params.inspect %>
+    </p>
+    <% if user_signed_in? %>
+      <ul class="filter-list">
+        <li class="filter <%= filter_active?("all") %>"><%= link_to "All", projects_path %></li>
+        <% @categories.each do |category| %>
+          <li class="filter <%= filter_active?(category.abbr) %>">
+            <%= link_to category.name, projects_path(category: category.abbr) %>
+            <%= link_to "Edit", edit_category_path(category), class: "edit-link" %>
+          </li>
+        <% end %>
+        <li class="filter">
+          <%= link_to "+ Add New", new_category_path %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="filter-list">
+        <li class="filter active"><%= link_to "All", projects_path %></li>
+        <% @categories.each do |category| %>
+          <li class="filter"><%= link_to category.name, projects_path(category: category.abbr) %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
     <div class="porfolio-gallery">
       <div class="row">
