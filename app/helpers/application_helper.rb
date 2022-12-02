@@ -6,4 +6,10 @@ module ApplicationHelper
 
     ''
   end
+
+  # adds active class to li.filter in projects/index
+  def filter_active?(category)
+    return "active" if params[:category] == category
+    return "active" if params[:category].nil? && category == "all"
+  end
 end
