@@ -1,8 +1,7 @@
 # == Route Map
 #
 #           Prefix Verb   URI Pattern                    Controller#Action
-#       categories GET    /categories(.:format)          categories#index
-#                  POST   /categories(.:format)          categories#create
+#       categories POST   /categories(.:format)          categories#create
 #     new_category GET    /categories/new(.:format)      categories#new
 #    edit_category GET    /categories/:id/edit(.:format) categories#edit
 #         category PATCH  /categories/:id(.:format)      categories#update
@@ -26,8 +25,8 @@
 # sessions_message GET    /sessions/message(.:format)    sessions#message
 
 Rails.application.routes.draw do
-  resources :categories, except: :show
-  resources :projects, except: [:show]
+  resources :categories, except: [:show, :index]
+  resources :projects, except: :show
   root to: 'home#index'
   get 'home/about'
   get 'home/portfolio'
