@@ -133,3 +133,6 @@ passenger-config restart-app
   - https://themes.muffingroup.com/be/code2/ <---
 - Add pictures in Rails: https://www.youtube.com/watch?v=1cw6qO1EYGw
 - Nav bar active css - https://gist.github.com/mynameispj/5692162
+- Bootstrap 5 in Rails 7 - https://blog.eq8.eu/til/how-to-use-bootstrap-5-in-rails-7.html
+- Ordering
+  - Order attachments - https://blog.eq8.eu/article/order-attachments-in-rails-activestorage-has_many_attached.html

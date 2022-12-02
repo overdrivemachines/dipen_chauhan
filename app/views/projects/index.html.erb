@@ -15,10 +15,14 @@
 
     <p style="color: green"><%= notice %></p>
     <ul class="filter-list">
-      <li class="filter active">All</li>
-      <li class="filter">Ruby on Rails</li>
-      <li class="filter">JavaScript</li>
-      <li class="filter">C++</li>
+      <li class="filter active"><%= link_to "All", projects_path(category: :all) %></li>
+      <li class="filter"><%= link_to "Ruby on Rails", projects_path(category: :rails) %>
+        | Edit</li>
+      <li class="filter"><%= link_to "JavaScript", projects_path(category: :js) %>
+        | Edit</li>
+      <li class="filter"><%= link_to "C++", projects_path(category: :cpp) %>
+        | Edit</li>
+      <li class="filter">+</li>
     </ul>
 
     <div class="porfolio-gallery">
