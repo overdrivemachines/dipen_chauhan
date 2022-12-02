@@ -7,3 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.create(email: "get.dipen@gmail.com", first_name: "Dipen", last_name: "Chauhan", login: "helloworld")
+
+Category.create(name: "Ruby on Rails", abbr: "ror");
+Category.create(name: "JavaScript", abbr: "js");
+Category.create(name: "C++", abbr: "cpp");

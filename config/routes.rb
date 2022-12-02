@@ -19,6 +19,7 @@
 # sessions_message GET    /sessions/message(.:format)  sessions#message
 
 Rails.application.routes.draw do
+  resources :categories
   resources :projects, except: [:show]
   root to: 'home#index'
   get 'home/about'

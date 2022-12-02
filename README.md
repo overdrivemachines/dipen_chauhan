@@ -136,3 +136,6 @@ passenger-config restart-app
 - Bootstrap 5 in Rails 7 - https://blog.eq8.eu/til/how-to-use-bootstrap-5-in-rails-7.html
 - Ordering
   - Order attachments - https://blog.eq8.eu/article/order-attachments-in-rails-activestorage-has_many_attached.html
+- Add Categories
+  - rails g migration AddCategoryToProjects category:belongs_to
+  - https://www.youtube.com/watch?v=XCi1htTx9vY
