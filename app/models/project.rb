@@ -13,8 +13,10 @@
 #
 class Project < ApplicationRecord
   has_one_attached :image
+  belongs_to :category
   before_save :remove_space
 
+  validates :category_id, presence: true
   validates :title, :description, :url, presence: true
   validates :url, url: true # using validate_url gem
 
