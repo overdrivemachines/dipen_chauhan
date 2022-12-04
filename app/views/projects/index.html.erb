@@ -22,7 +22,10 @@
         <% @categories.each do |category| %>
           <li class="filter <%= filter_active?(category.abbr) %>">
             <%= link_to category.name, projects_path(category: category.abbr) %>
-            <%= link_to "Edit", edit_category_path(category), class: "edit-link" %>
+            <div class="edit-links">
+              <%= link_to "Edit", edit_category_path(category) %>
+              <%= link_to "Delete", category, data: { "turbo_method": :delete, "turbo_confirm": "Are you sure?" } %>
+            </div>
           </li>
         <% end %>
         <li class="filter">
