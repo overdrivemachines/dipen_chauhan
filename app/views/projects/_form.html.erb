@@ -34,10 +34,13 @@
 
   <div class="mb-3">
     <%= form.label :category, class: "form-label" %>
-    <%= form.select :category_id, options_for_select(@categories.collect{|cat| [cat.name, cat.id]}) %>
+    <%# @categories.coollect returns an array of arrays: %>
+    <%# [["opt1", "val1"], ["opt2", "val2"], ["opt3", "val3"] ...] %>
+    <%= form.select(:category_id, @categories.collect{|cat| [cat.name, cat.id]}, {}, {class: "form-select"}) %>
   </div>
 
-  <div class="mb-3">
+  <div class="mt-4">
     <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= link_to "Cancel", projects_path, class: "btn btn-secondary ms-1" %>
   </div>
 <% end %>
