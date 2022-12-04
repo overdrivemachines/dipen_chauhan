@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
+  before_action :keep_hidden_category, only: %i[ edit update destroy ]
 
   # GET /categories/new
   def new
@@ -40,6 +41,10 @@ class CategoriesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_category
     @category = Category.find(params[:id])
+  end
+
+  def keep_hidden_category
+    redirect_to projects_url, notice: "You cannot edit/delete the Hidden category" if @category.abbr == "Hidden"
   end
 
   # Only allow a list of trusted parameters through.
