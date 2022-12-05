@@ -36,7 +36,9 @@
       <ul class="filter-list">
         <li class="filter active"><%= link_to "All", projects_path %></li>
         <% @categories.each do |category| %>
-          <li class="filter"><%= link_to category.name, projects_path(category: category.abbr) %></li>
+          <% if category.abbr != "Hidden" %>
+            <li class="filter"><%= link_to category.name, projects_path(category: category.abbr) %></li>
+          <% end %>
         <% end %>
       </ul>
     <% end %>
@@ -44,7 +46,13 @@
     <div class="porfolio-gallery">
       <div class="row">
         <% @projects.each do |project| %>
-          <%= render project %>
+          <% if user_signed_in? %>
+            <%= render project %>
+          <% else %>
+            <% if project.category.abbr != "Hidden" %>
+              <%= render project %>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
