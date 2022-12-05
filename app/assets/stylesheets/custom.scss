@@ -376,8 +376,13 @@ ul.profile-list > li > a {
     display: block;
   }
 
-  .edit-link {
+  .edit-links {
     font-size: 0.667em;
+    display: block;
+
+    a {
+      display: inline-block;
+    }
   }
 }
 
@@ -450,6 +455,13 @@ ul.profile-list > li > a {
   margin: 0.667em 0;
   a {
     margin-right: 1em;
+  }
+}
+
+.portfolio-page {
+  .form-select {
+    // remove the bootstrap default width of 100%
+    width: auto;
   }
 }
 

@@ -27,6 +27,7 @@ class Category < ApplicationRecord
 
     projects.each do |project|
       project.category_id = Category.find_by(abbr: "Hidden").id
+      project.save
     end
   end
 end

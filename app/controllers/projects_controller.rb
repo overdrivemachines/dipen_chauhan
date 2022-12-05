@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   # GET /projects
   def index
     @projects = Project.all
+    return if params[:category].nil?
+
+    @projects = Project.joins(:category).where(categories: { abbr: params[:category] })
   end
 
   # GET /projects/new
