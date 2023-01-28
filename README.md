@@ -131,6 +131,9 @@ passenger-config restart-app
   - https://themeforest.net/item/reframe-personal-one-page-portfolio-html-template/33840600
   - https://harnishdesign.net/demo/html/simone/index-dark-classic-header.html
   - https://themes.muffingroup.com/be/code2/ <---
+  - New Theme
+    - https://demo.egenslab.com/html/picszen/preview/index.html
+    - https://preview.themeforest.net/item/picszen-photography-html-template/full_screen_preview/42275106
 - Add pictures in Rails: https://www.youtube.com/watch?v=1cw6qO1EYGw
 - Nav bar active css - https://gist.github.com/mynameispj/5692162
 - Bootstrap 5 in Rails 7 - https://blog.eq8.eu/til/how-to-use-bootstrap-5-in-rails-7.html
