@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dipen Chauhan - Portfolio</title>
+    <meta name="description" content="I'm a web and software developer. In the past I have worked as a Software Tester and Ruby on Rails Developer." />
+    <meta name="theme-color" content="#101010" />
+
+    <meta property="og:title" content="Dipen Chauhan ★ Web Developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dipenchauhan.com/" />
+    <meta property="og:image" content="TODO" />
+    <meta name="og:description" content="I'm a web and software developer. In the past I have worked as a Software Tester and Ruby on Rails Developer." />
+
+    <link rel="apple-touch-icon" href="icon.png" />
+    <%# TODO: add logo-icon.svg %>
+    <link rel="icon" href="assets/images/icons/logo-icon.svg" type="image/gif" sizes="20x20" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <title>Dipen Chauhan ★ Web Developer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,14 +27,14 @@
 
   <body>
     <a href="#site-main" class="skip-link">Skip to main content</a>
-    <%= render 'layouts/navbar' %>
-    <div class="content-wrapper">
-      <span class="tags top-tags">&lt;body&gt;</span>
-      <span class="tags bottom-tags">&lt;/body&gt;<br><span class="bottom-tag-html">&lt;/html&gt;</span></span>
-      <main id="site-main">
+    <%= render 'layouts/menu' %>
+
+    <main class="main-page-wrapper">
+      <%= render 'layouts/fixed' %>
+      <div class="page-content">
+        <%= render 'layouts/header' %>
         <%= yield %>
-      </main>
-      <%= render 'layouts/footer' %>
-    </div>
+      </div>
+    </main>
   </body>
 </html>
