@@ -15,9 +15,7 @@
 #                  PUT    /projects/:id(.:format)        projects#update
 #                  DELETE /projects/:id(.:format)        projects#destroy
 #             root GET    /                              home#index
-#       home_about GET    /home/about(.:format)          home#about
-#   home_portfolio GET    /home/portfolio(.:format)      home#portfolio
-#     home_contact GET    /home/contact(.:format)        home#contact
+#         contacts POST   /contacts(.:format)            contacts#create
 #            login GET    /login(.:format)               sessions#new
 #                  POST   /login(.:format)               sessions#create
 #           logout DELETE /logout(.:format)              sessions#destroy

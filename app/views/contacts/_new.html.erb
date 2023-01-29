@@ -7,8 +7,8 @@
   </div>
   <div class="row justify-content-center align-items-center">
     <div class="col-xl-12 col-lg-12">
-      <%= form_with model: @contact, class: "contact-me-form" do |form| %>
-
+      <%= form_with model: @contact, id: "new-contact-form" do |form| %>
+        <div id="new-contact-form-errors"></div>
         <div class="row">
           <div class="col-lg-6">
             <div class="form-inner">
@@ -34,6 +34,8 @@
             <button type="submit" class="eg-btn btn--primary btn--lg">Send Message</button>
           </div>
         </div>
+
+        <%# div.message-sent element will be inserted here %>
       <% end %>
     </div>
   </div>

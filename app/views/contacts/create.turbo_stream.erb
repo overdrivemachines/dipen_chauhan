@@ -1,0 +1,21 @@
+<% if @contact.errors.any? %>
+  <%= turbo_stream.replace "new-contact-form-errors" do %>
+    <div id="new-contact-form-errors">
+      <div class="text-danger mb-2 message-error" role="alert">
+        <%= @contact.errors.full_messages.to_sentence %>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+  <%= turbo_stream.append "new-contact-form" do %>
+    <div class="message-sent">
+      <p><i class='bx bxs-check-circle bx-md text-success me-2'></i> Your message has been sent!</p>
+    </div>
+  <% end %>
+
+  <%= turbo_stream.replace "new-contact-form-errors" do %>
+    <div id="new-contact-form-errors">
+    </div>
+  <% end %>
+<% end %>
