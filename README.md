@@ -142,3 +142,8 @@ passenger-config restart-app
 - Add Categories
   - rails g migration AddCategoryToProjects category:belongs_to
   - https://www.youtube.com/watch?v=XCi1htTx9vY
+- Mail form
+  - https://www.railscoder.com/articles/adding-contact-forms-in-rails-7-with-mail_form-gem
+  - https://gist.github.com/stevecondylios/16a53b73f22621e3cde2e17096dbf5ca
+  - https://mailtrap.io/blog/ruby-on-rails-contact-form/
+  - https://medium.com/@Gabriel.Valle/rails-and-mail-form-f4bc4f991c83

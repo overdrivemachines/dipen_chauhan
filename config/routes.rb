@@ -28,9 +28,8 @@ Rails.application.routes.draw do
   resources :categories, except: [:show, :index]
   resources :projects, except: :show
   root to: 'home#index'
-  get 'home/about'
-  get 'home/portfolio'
-  get 'home/contact'
+
+  post "/contacts", to: "contacts#create", as: "contacts"
 
   # Login / Sessions
   get "/login", to: "sessions#new"
