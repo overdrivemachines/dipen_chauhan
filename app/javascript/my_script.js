@@ -22,29 +22,31 @@ document.addEventListener("turbo:load", () => {
   --------------------------------------------- */
   const myNameEl = document.querySelector(".my-name");
 
-  // Wrap each letter with a span.letter
-  myNameEl.innerHTML = myNameEl.innerText.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+  if (myNameEl != null) {
+    // Wrap each letter with a span.letter
+    myNameEl.innerHTML = myNameEl.innerText.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
 
-  // Array of span.letter elements
-  const lettersArray = gsap.utils.toArray("span.letter");
+    // Array of span.letter elements
+    const lettersArray = gsap.utils.toArray("span.letter");
 
-  // Create a new timeline
-  let myNameTimeline = new TimelineMax({ repeat: -1 });
+    // Create a new timeline
+    let myNameTimeline = new TimelineMax({ repeat: -1 });
 
-  myNameTimeline
-    .staggerFrom(
-      lettersArray,
-      0.5,
-      {
-        top: "+=25px",
-        rotation: "-=-3deg",
-        alpha: 0,
-        scale: 0.8,
-        ease: Power1.easeOut,
-      },
-      0.15
-    )
-    .to(lettersArray, 0.5, { alpha: 0, ease: Power1.easeOut }, "+=1.2");
+    myNameTimeline
+      .staggerFrom(
+        lettersArray,
+        0.5,
+        {
+          top: "+=25px",
+          rotation: "-=-3deg",
+          alpha: 0,
+          scale: 0.8,
+          ease: Power1.easeOut,
+        },
+        0.15
+      )
+      .to(lettersArray, 0.5, { alpha: 0, ease: Power1.easeOut }, "+=1.2");
+  }
 });
 
 /* ---------------------------------------------

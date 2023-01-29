@@ -2,7 +2,11 @@
   <div class="row">
     <div class="section-title-three text-center">
       <div class="water-text">Portfolio</div>
-      <h2>Portfolio</h2>
+      <h2>Portfolio
+        <%= link_to new_project_path do %>
+          <i class='bx bx-plus'></i>
+        <% end %>
+      </h2>
     </div>
   </div>
   <div class="row justify-content-center g-4">
@@ -14,6 +18,11 @@
             <li class="filter" data-filter="<%= category.abbr %>"><%= category.name %> <span><%= category.projects.size %></span></li>
           <% end %>
           <%# <li class="filter" data-filter="rails">Ruby on Rails <span>3</span></li> %>
+          <li>
+            <%= link_to new_category_path do %>
+              <i class='bx bx-plus'></i>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
@@ -27,95 +36,12 @@
             <h3><%= project.title %></h3>
             <p><%= project.description %></p>
             <div class="d-flex justify-content-between">
-              <a href="#">Live Site</a>
-              <a href="#">View Code</a>
+              <%= link_to "Live Site", project.live_url %>
+              <%= link_to "View Code", project.code_url %>
             </div>
           </div>
         </div>
       </div>
     <% end %>
-    <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="javascript">
-      <div class="portfolio-single-one style-three magnetic-item">
-        <img class="img-fluid" src="https://raw.githubusercontent.com/overdrivemachines/spock-rock-game/main/preview.png" alt="image" />
-        <div class="content">
-          <h3>Rock Paper Scissors Lizard Spock</h3>
-          <p>Game similar to Rock Paper Scissors</p>
-          <div class="d-flex justify-content-between">
-            <a href="#">Live Site</a>
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="javascript">
-      <div class="portfolio-single-one style-three magnetic-item">
-        <img class="img-fluid" src="https://raw.githubusercontent.com/overdrivemachines/form-validator/main/preview.png" alt="image" />
-        <div class="content">
-          <h3>Form Validator</h3>
-          <p>Validate a (Sign Up) form using JavaScript</p>
-          <div class="d-flex justify-content-between">
-            <a href="#">Live Site</a>
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="rails">
-      <div class="portfolio-single-one style-three magnetic-item">
-        <img class="img-fluid" src="https://raw.githubusercontent.com/overdrivemachines/book-keeper/main/preview.png" alt="image" />
-        <div class="content">
-          <h3>Book Keeper</h3>
-          <p>Allow users to save bookmarks. User can click on the bookmarks/links and will be redirected to the website.</p>
-          <div class="d-flex justify-content-between">
-            <a href="#">Live Site</a>
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="javascript">
-      <div class="portfolio-single-one style-three magnetic-item">
-        <img class="img-fluid" src="https://raw.githubusercontent.com/overdrivemachines/spock-rock-game/main/preview.png" alt="image" />
-        <div class="content">
-          <h3>Rock Paper Scissors Lizard Spock</h3>
-          <p>Game similar to Rock Paper Scissors</p>
-          <div class="d-flex justify-content-between">
-            <a href="#">Live Site</a>
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="rails">
-      <div class="portfolio-single-one style-three magnetic-item">
-        <img class="img-fluid" src="https://raw.githubusercontent.com/overdrivemachines/form-validator/main/preview.png" alt="image" />
-        <div class="content">
-          <h3>Form Validator</h3>
-          <p>Validate a (Sign Up) form using JavaScript</p>
-          <div class="d-flex justify-content-between">
-            <a href="#">Live Site</a>
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="javascript">
-      <div class="portfolio-single-one style-three magnetic-item">
-        <img class="img-fluid" src="https://raw.githubusercontent.com/overdrivemachines/book-keeper/main/preview.png" alt="image" />
-        <div class="content">
-          <h3>Book Keeper</h3>
-          <p>Allow users to save bookmarks. User can click on the bookmarks/links and will be redirected to the website.</p>
-          <div class="d-flex justify-content-between">
-            <a href="#">Live Site</a>
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>

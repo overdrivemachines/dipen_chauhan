@@ -5,11 +5,12 @@
 #  id            :integer          not null, primary key
 #  title         :string
 #  description   :string
-#  url           :string
+#  live_url      :string
 #  display_order :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  category_id   :integer          not null
+#  code_url      :string
 #
 require "test_helper"
 
