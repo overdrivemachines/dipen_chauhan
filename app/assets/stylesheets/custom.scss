@@ -220,8 +220,10 @@ input {
 }
 
 a {
+  color: var(--color-red);
   text-decoration: none;
   &:hover {
+    color: var(--color-red);
     text-decoration: none;
   }
   &:focus {
