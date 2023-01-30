@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to projects_url, notice: "Category was successfully created."
+      redirect_to root_url, notice: "Category was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   def update
     if @category.update(category_params)
-      redirect_to projects_url, notice: "Category was successfully updated."
+      redirect_to root_url, notice: "Category was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
   def destroy
     category_name = @category.name
     @category.destroy
-    redirect_to projects_url, notice: "Category #{category_name} was successfully destroyed."
+    redirect_to root_url, notice: "Category #{category_name} was successfully destroyed."
   end
 
   private
@@ -45,7 +45,7 @@ class CategoriesController < ApplicationController
   end
 
   def keep_hidden_category
-    redirect_to projects_url, notice: "You cannot edit/delete the Hidden category" if @category.abbr == "Hidden"
+    redirect_to root_url, notice: "You cannot edit/delete the Hidden category" if @category.abbr == "Hidden"
   end
 
   # Only allow a list of trusted parameters through.
