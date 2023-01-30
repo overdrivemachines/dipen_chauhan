@@ -7,12 +7,18 @@
 #  abbr       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  position   :integer
 #
 class Category < ApplicationRecord
   has_many :projects
   # Before a category is destroyed, all projects of this category
   # need to be reassigned different categories
   before_destroy :reassign_projects_category
+  acts_as_list # acts_as_list gem
+  default_scope { order(position: :asc) }
+
+  validates :name, presence: true
+  validates :abbr, presence: true
 
   private
 
