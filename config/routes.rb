@@ -7,8 +7,7 @@
 #         category PATCH  /categories/:id(.:format)      categories#update
 #                  PUT    /categories/:id(.:format)      categories#update
 #                  DELETE /categories/:id(.:format)      categories#destroy
-#         projects GET    /projects(.:format)            projects#index
-#                  POST   /projects(.:format)            projects#create
+#         projects POST   /projects(.:format)            projects#create
 #      new_project GET    /projects/new(.:format)        projects#new
 #     edit_project GET    /projects/:id/edit(.:format)   projects#edit
 #          project PATCH  /projects/:id(.:format)        projects#update
@@ -24,7 +23,7 @@
 
 Rails.application.routes.draw do
   resources :categories, except: [:show, :index]
-  resources :projects, except: :show
+  resources :projects, except: [:show, :index]
   root to: 'home#index'
 
   post "/contacts", to: "contacts#create", as: "contacts"

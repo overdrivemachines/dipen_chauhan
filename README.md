@@ -147,3 +147,4 @@ passenger-config restart-app
   - https://gist.github.com/stevecondylios/16a53b73f22621e3cde2e17096dbf5ca
   - https://mailtrap.io/blog/ruby-on-rails-contact-form/
   - https://medium.com/@Gabriel.Valle/rails-and-mail-form-f4bc4f991c83
+- Save sorted list in DB: https://github.com/brendon/acts_as_list
