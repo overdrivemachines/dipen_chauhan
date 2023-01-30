@@ -44,6 +44,8 @@ group :development do
   gem "down"
   # Get images from pexels.com
   gem "pexels"
+
+  gem "faker"
 end
 
 group :production do
