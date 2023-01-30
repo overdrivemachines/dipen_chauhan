@@ -1,9 +1,11 @@
-<section class="section-common pt-120 pb-120 project-page">
-  <div class="row">
-    <div class="section-title-three text-center">
-      <div class="water-text">New Project</div>
-      <h2>New Project</h2>
+<%= turbo_frame_tag "portfolio-frame" do %>
+  <section class="section-common pt-120 pb-120 project-page">
+    <div class="row">
+      <div class="section-title-three text-center">
+        <div class="water-text">New Project</div>
+        <h2>New Project</h2>
+      </div>
     </div>
-  </div>
-  <%= render "form", project: @project %>
-</section>
+    <%= render "form", project: @project %>
+  </section>
+<% end %>

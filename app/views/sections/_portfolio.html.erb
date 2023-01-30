@@ -1,39 +1,41 @@
-<section class="section-common portfolio-section pt-120" id="portfolio">
-  <div class="row">
-    <div class="section-title-three text-center">
-      <div class="water-text">Portfolio</div>
-      <h2>Portfolio
-        <%= link_to new_project_path do %>
-          <i class='bx bx-plus'></i>
-        <% end %>
-      </h2>
-    </div>
-  </div>
-  <div class="row justify-content-center g-4">
-    <div class="col-lg-12">
-      <div class="filters filter-button-group">
-        <ul class="d-flex justify-content-center flex-wrap" id="portfolioCategories">
-          <li class="filter active" data-filter="*">All <span><%= Project.all.size %></span></li>
-          <% @categories.each do |category| %>
-            <li class="filter" data-filter="<%= category.abbr %>">
-              <%= category.name %>
-              <span><%= category.projects.size %></span>
-              <span><%= link_to "Edit", edit_category_path(category) %></span>
-              <span><%= link_to "Delete", category, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></span>
-            </li>
-
+<%= turbo_frame_tag "portfolio-frame" do %>
+  <section class="section-common portfolio-section pt-120">
+    <div class="row">
+      <div class="section-title-three text-center">
+        <div class="water-text">Portfolio</div>
+        <h2>Portfolio
+          <%= link_to new_project_path do %>
+            <i class='bx bx-plus'></i>
           <% end %>
-          <%# <li class="filter" data-filter="rails">Ruby on Rails <span>3</span></li> %>
-          <li>
-            <%= link_to new_category_path do %>
-              <i class='bx bx-plus'></i>
-            <% end %>
-          </li>
-        </ul>
+        </h2>
       </div>
     </div>
-  </div>
-  <div class="row justify-content-center g-4 portfolio-item-container">
-    <%= render @projects %>
-  </div>
-</section>
+    <div class="row justify-content-center g-4">
+      <div class="col-lg-12">
+        <div class="filters filter-button-group">
+          <ul class="d-flex justify-content-center flex-wrap" id="portfolioCategories">
+            <li class="filter active" data-filter="*">All <span><%= Project.all.size %></span></li>
+            <% @categories.each do |category| %>
+              <li class="filter" data-filter="<%= category.abbr %>">
+                <%= category.name %>
+                <span><%= category.projects.size %></span>
+                <span><%= link_to "Edit", edit_category_path(category) %></span>
+                <span><%= link_to "Delete", category, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></span>
+              </li>
+
+            <% end %>
+            <%# <li class="filter" data-filter="rails">Ruby on Rails <span>3</span></li> %>
+            <li>
+              <%= link_to new_category_path do %>
+                <i class='bx bx-plus'></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center g-4 portfolio-item-container">
+      <%= render @projects %>
+    </div>
+  </section>
+<% end %>
