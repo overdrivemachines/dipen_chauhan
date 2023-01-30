@@ -17,6 +17,7 @@ gem "image_processing", ">= 1.2"
 gem "validate_url" # adds the capability of validating URLs to ActiveRecord and ActiveModel.
 gem "bcrypt" # used for password
 gem "mail_form", "~> 1.9" # Contact us form
+gem "acts_as_list" # store ordered list in db
 
 
 group :development, :test do
@@ -36,6 +37,13 @@ group :development do
 
   # Preview emails
   gem "letter_opener"
+
+  # Annotate controllers
+  gem "chusaku", require: false
+  # Download files for seed data
+  gem "down"
+  # Get images from pexels.com
+  gem "pexels"
 end
 
 group :production do
