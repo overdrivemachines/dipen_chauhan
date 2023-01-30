@@ -1,28 +1,19 @@
-<div class="col-md-6 col-lg-4 project-container">
-  <%= link_to project.url, target: "_blank" do %>
-    <figure>
-      <% if project.image.persisted? %>
-        <%= image_tag(project.image) %>
-      <% else %>
-        <%= image_tag "placeholder.webp" %>
-      <% end %>
-    </figure>
-  <% end %>
-  <div class="project-info">
-    <h2 class="project-title"><%= project.title %></h2>
-    <div class="badge-container">
-      <span class="badge rounded-pill"><%= project.category.abbr %></span>
+<div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="<%= project.category.abbr %>">
+  <div class="portfolio-single-one style-three magnetic-item">
+    <% if project.image.persisted? %>
+      <%= image_tag project.image, class: "img-fluid", alt: "Image" %>
+    <% else %>
+      <%= image_tag "placeholder.webp", class: "img-fluid", alt: "Image" %>
+    <% end %>
+    <div class="content">
+      <h3><%= project.title %></h3>
+      <p><%= project.description %></p>
+      <div class="d-flex justify-content-between">
+        <%= link_to "Live Site", project.live_url %>
+        <%= link_to "View Code", project.code_url %>
+        <%= link_to "Edit", edit_project_path(project) %>
+        <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
     </div>
   </div>
-  <div class="project-description">
-    <%= project.description %>
-  </div>
-
-  <% if user_signed_in? %>
-    <div class="project-actions">
-      <%= link_to "Edit", edit_project_path(project) %>
-      <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
-    </div>
-  <% end %>
-
 </div>
