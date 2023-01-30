@@ -1,9 +1,9 @@
 <div class="row justify-content-center align-items-center">
   <div class="col-xl-12 col-lg-12">
-    <%= form_with model: @category do |form| %>
+    <%= form_with model: category do |form| %>
       <div class="row">
         <% if category.errors.any? %>
-          <div class="col-lg-12" style="color: red">
+          <div class="col-lg-12 text-red">
             <h2><%= pluralize(category.errors.count, "error") %>
               prohibited this category from being saved:</h2>
 
