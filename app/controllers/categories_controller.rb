@@ -23,7 +23,21 @@ class CategoriesController < ApplicationController
 
   # PATCH/PUT /categories/1
   def update
-    if @category.update(category_params)
+    if !params[:category][:move].nil?
+      case params[:category][:move]
+      when "left"
+        @category.move_higher
+      when "right"
+        @category.move_lower
+      when "top"
+        @category.move_to_top
+      when "bottom"
+        @category.move_to_bottom
+      end
+
+      redirect_to root_url
+
+    elsif @category.update(category_params)
       redirect_to root_url, notice: "Category was successfully updated."
     else
       render :edit, status: :unprocessable_entity
@@ -45,6 +59,8 @@ class CategoriesController < ApplicationController
   end
 
   def keep_hidden_category
+    return unless params[:category][:move].nil?
+
     redirect_to root_url, notice: "You cannot edit/delete the Hidden category" if @category.abbr == "Hidden"
   end
 

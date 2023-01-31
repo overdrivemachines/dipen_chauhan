@@ -19,8 +19,15 @@
               <li class="filter" data-filter="<%= category.abbr %>">
                 <%= category.name %>
                 <span><%= category.projects.size %></span>
+                <span>
+                  <%= link_to "Move Left", [category, {category: {move: "left"}}], data: {turbo_method: :patch}  %>
+                </span>
+                <span>
+                  <%= link_to "Move Right", [category, {category: {move: "right"}}], data: {turbo_method: :patch}  %>
+                </span>
                 <span><%= link_to "Edit", edit_category_path(category) %></span>
                 <span><%= link_to "Delete", category, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></span>
+
               </li>
 
             <% end %>
