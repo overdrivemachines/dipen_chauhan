@@ -1,31 +1,36 @@
-<section id="sessions-page">
-  <div class="container">
-    <div class="row">
-      <div class="title">
-        <h1>Log in with email</h1>
-      </div>
+<section class="section-common pt-120 pb-120 login-page">
+  <div class="row">
+    <div class="section-title-three text-center">
+      <div class="water-text">Login</div>
+      <h2>Login</h2>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-8 form-container">
-        <%= form_with(url: login_path, scope: :session) do |f| %>
-        <div class="mb-3">
-          <p>Enter the email address associated with your account, and we'll send a magic link to your inbox.</p>
-        </div>
-          <div class="mb-3">
-            <%= f.label :email, class: "form-label" %>
-            <%= f.email_field :email, class: "form-control", "aria-describedby": "emailHelp" %>
-            <div id="emailHelp" class="form-text">
-              There is one account and no sign up.
-            </div>
-          </div>
-          
-          <div class="mb-3">
-            <%= f.submit "Continue", class: "btn btn-primary" %>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-xl-12 col-lg-12">
+      <%= form_with(url: login_path, scope: :session) do |form| %>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              Enter the email address associated with your account, and we'll send a magic link to your inbox.
+            </p>
           </div>
 
-        <% end %>
+          <div class="col-lg-12">
+            <div class="form-inner">
+              <%= form.email_field :email, placeholder: "Enter email address", "aria-describedby": "emailHelp" %>
+              <div id="emailHelp" class="form-text">
+                There is one account and no sign up.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="eg-btn btn--primary btn--lg">Send</button>
+            <%= link_to "Cancel", root_path, class: "eg-btn btn--primary-three btn--lg ms-2" %>
+          </div>
+
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>
