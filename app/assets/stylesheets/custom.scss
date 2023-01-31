@@ -1604,6 +1604,25 @@ header.style-1 {
   }
 }
 
+.project-move-actions {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+
+  a {
+    // padding: 1em;
+    flex-grow: 1;
+    text-align: center;
+  }
+  a:hover {
+    // background: var(--bg-dark3);
+    color: var(--color-red);
+  }
+  i {
+    font-size: 24px;
+  }
+}
+
 /*=======================================
    XX. Footer Section
 =======================================*/

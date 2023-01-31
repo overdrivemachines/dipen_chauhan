@@ -24,7 +24,19 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-    if @project.update(project_params)
+    if !params[:project][:move].nil?
+      case params[:project][:move]
+      when "left"
+        @project.move_higher
+      when "right"
+        @project.move_lower
+      when "top"
+        @project.move_to_top
+      when "bottom"
+        @project.move_to_bottom
+      end
+      redirect_to root_url
+    elsif @project.update(project_params)
       redirect_to root_url, notice: "Project was successfully updated."
     else
       render :edit, status: :unprocessable_entity
