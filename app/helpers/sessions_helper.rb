@@ -10,7 +10,11 @@ module SessionsHelper
     session[:user_id] = user.id
 
     # create new login token
+    # e.g. token = ZKZOh2N7iPPGHXSPx5incQ
     token = User.new_token
+
+    # setting user.login updates user.login_digest
+    # user.login_digest = $2a$12$hd3Ey3gEjEXGpMiKeqmQYOd9oXeL2kiYGZbBZx8qeb0Y0PBJmkMGa
     user.login = token
 
     # TODO: reset login_sent_at
