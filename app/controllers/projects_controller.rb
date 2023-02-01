@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_project, only: %i[ edit update destroy ]
-  # before_action :authenticate_user!, except: :index
   before_action :set_categories
 
   # GET /projects/new

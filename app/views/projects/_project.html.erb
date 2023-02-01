@@ -14,23 +14,27 @@
       <div class="d-flex justify-content-between">
         <%= link_to "View Project", project.live_url, target: "_blank" %>
         <%= link_to "GitHub Code", project.code_url, target: "_blank" %>
-        <%= link_to "Edit", edit_project_path(project) %>
-        <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
-      </div>
-      <div class="project-move-actions">
-        <%= link_to [project, {project: {move: "top"}}], data: {turbo_method: :patch} do %>
-          <i class='bx bx-arrow-to-left' ></i>
-        <% end %>
-        <%= link_to [project, {project: {move: "left"}}], data: {turbo_method: :patch} do %>
-          <i class='bx bx-left-arrow-alt'></i>
-        <% end %>
-        <%= link_to [project, {project: {move: "right"}}], data: {turbo_method: :patch} do  %>
-          <i class='bx bx-right-arrow-alt'></i>
-        <% end %>
-        <%= link_to [project, {project: {move: "bottom"}}], data: {turbo_method: :patch} do %>
-          <i class='bx bx-arrow-to-right' ></i>
+        <% if user_signed_in? %>
+          <%= link_to "Edit", edit_project_path(project) %>
+          <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
         <% end %>
       </div>
+      <% if user_signed_in? %>
+        <div class="project-move-actions">
+          <%= link_to [project, {project: {move: "top"}}], data: {turbo_method: :patch} do %>
+            <i class='bx bx-arrow-to-left' ></i>
+          <% end %>
+          <%= link_to [project, {project: {move: "left"}}], data: {turbo_method: :patch} do %>
+            <i class='bx bx-left-arrow-alt'></i>
+          <% end %>
+          <%= link_to [project, {project: {move: "right"}}], data: {turbo_method: :patch} do  %>
+            <i class='bx bx-right-arrow-alt'></i>
+          <% end %>
+          <%= link_to [project, {project: {move: "bottom"}}], data: {turbo_method: :patch} do %>
+            <i class='bx bx-arrow-to-right' ></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
