@@ -62,7 +62,7 @@ class SessionsController < ApplicationController
       # log_in defined in sessions_helper.rb
       log_in(user)
       flash[:success] = "Account Logged In!"
-      redirect_to projects_path
+      redirect_to root_path
     else
       flash[:title] = "Invalid Login"
       redirect_to sessions_message_path,
