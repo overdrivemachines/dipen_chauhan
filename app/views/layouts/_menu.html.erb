@@ -3,19 +3,37 @@
     <div class="menu-close-btn"><i class="bx bx-x bx-md"></i></div>
     <div class="mobile-logo-area d-flex justify-content-start align-items-center">
       <div class="header-logo">
-        <a href="index.html"><%= image_tag "icons/logo.png", alt: "Logo" %></a>
+        <%= link_to root_path do %>
+          <%= image_tag "icons/logo.png", alt: "Logo" %>
+        <% end %>
       </div>
     </div>
     <div class="sidebar-menu-area">
       <ul class="menu-list">
         <!-- Home -->
-        <li class="menu-item"><a href="#home" class="mi-link" data-hover="Home"> Home</a></li>
+        <li class="menu-item">
+          <%= link_to "Home", root_path(anchor: "home"), class: "mi-link", data: { hover: "Home" } %>
+        </li>
         <!-- About -->
-        <li class="menu-item"><a href="#about" class="mi-link" data-hover="About"> About</a></li>
+        <li class="menu-item">
+          <%= link_to "About", root_path(anchor: "about"), class: "mi-link", data: { hover: "About" } %>
+        </li>
         <!-- Portfolio -->
-        <li class="menu-item"><a href="#portfolio" class="mi-link" data-hover="Portfolio"> Portfolio</a></li>
+        <li class="menu-item">
+          <%= link_to "Portfolio", root_path(anchor: "portfolio"), class: "mi-link", data: { hover: "Portfolio" } %>
+        </li>
         <!-- Contact -->
-        <li class="menu-item"><a href="#hire-me" class="mi-link" data-hover="Contact"> Contact</a></li>
+        <li class="menu-item">
+          <%= link_to "Contact", root_path(anchor: "hire-me"), class: "mi-link", data: { hover: "Contact" } %>
+        </li>
+        <!-- Login / Logout -->
+        <li class="menu-item">
+          <% if user_signed_in? %>
+            <%= link_to "Logout", logout_path, class: "mi-link", data: { hover: "Logout", "turbo-method": :delete } %>
+          <% else %>
+            <%= link_to "Login", login_path, class: "mi-link", data: { hover: "Login" } %>
+          <% end %>
+        </li>
       </ul>
     </div>
     <div class="sidebar-social d-flex justify-content-center gap-5">
