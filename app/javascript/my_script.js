@@ -47,50 +47,50 @@ document.addEventListener("turbo:load", () => {
       )
       .to(lettersArray, 0.5, { alpha: 0, ease: Power1.easeOut }, "+=1.2");
   }
-});
 
-/* ---------------------------------------------
-Mobile-menu
---------------------------------------------- */
-const burger = document.querySelector(".mobile-menu-btn");
-const nav = document.querySelector(".main-nav-js");
-const navLinks = document.querySelectorAll(".main-nav-js .menu-list .menu-item");
-const miLinks = gsap.utils.toArray(".mi-link");
+  /* ---------------------------------------------
+  Mobile-menu
+  --------------------------------------------- */
+  const burger = document.querySelector(".mobile-menu-btn");
+  const nav = document.querySelector(".main-nav-js");
+  const menuItems = document.querySelectorAll(".main-nav-js .menu-list .menu-item");
+  const miLinks = gsap.utils.toArray(".mi-link");
 
-const menuCloseBtn = document.querySelector(".menu-close-btn");
+  const menuCloseBtn = document.querySelector(".menu-close-btn");
 
-function addAnimationToNavLinks() {
-  navLinks.forEach((link, index) => {
-    if (link.style.animation) {
-      link.style.animation = "";
-    } else {
-      link.style.animation = `navLinkFade 0.4s ease forwards ${index / 10 + 0.5}s `;
-    }
+  function addAnimationToMenuItems() {
+    menuItems.forEach((menuItem, index) => {
+      if (menuItem.style.animation) {
+        menuItem.style.animation = "";
+      } else {
+        menuItem.style.animation = `navLinkFade 0.4s ease forwards ${index / 10 + 0.5}s `;
+      }
+    });
+  }
+
+  function hideMenu() {
+    nav.classList.remove("show-menu");
+    addAnimationToMenuItems();
+  }
+
+  // When the burger button is clicked, show the menu and add animation to the nav links
+  burger.addEventListener("click", () => {
+    nav.classList.add("show-menu");
+    addAnimationToMenuItems();
+    // burger.classList.toggle("toggle");
   });
-}
 
-function hideMenu() {
-  nav.classList.remove("show-menu");
-  addAnimationToNavLinks();
-}
-
-// When the burger button is clicked, show the menu and add animation to the nav links
-burger.addEventListener("click", () => {
-  nav.classList.add("show-menu");
-  addAnimationToNavLinks();
-  // burger.classList.toggle("toggle");
-});
-
-// When the close button is clicked, hide the menu and add animation to the nav links
-menuCloseBtn.addEventListener("click", () => {
-  hideMenu();
-  // burger.classList.toggle("toggle");
-});
-
-// When the menu links are clicked, hide the menu and add animation to the nav links
-miLinks.forEach((m) => {
-  m.addEventListener("click", () => {
+  // When the close button is clicked, hide the menu and add animation to the nav links
+  menuCloseBtn.addEventListener("click", () => {
     hideMenu();
+    // burger.classList.toggle("toggle");
+  });
+
+  // When the menu links are clicked, hide the menu and add animation to the nav links
+  miLinks.forEach((m) => {
+    m.addEventListener("click", () => {
+      hideMenu();
+    });
   });
 });
 
