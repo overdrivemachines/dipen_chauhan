@@ -30,6 +30,12 @@
               <%= form.text_area :message, placeholder: "Write your message", rows: 6 %>
             </div>
           </div>
+
+          <div class="d-none">
+            <%= form.label :nickname %>
+            <%= form.text_field :nickname %>
+          </div>
+
           <div class="col-12">
             <%# form.submit "Send Message", class: "eg-btn btn--primary btn--lg" %>
             <button type="submit" class="eg-btn btn--primary btn--lg">Send Message</button>

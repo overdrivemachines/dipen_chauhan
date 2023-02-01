@@ -1,9 +1,12 @@
 class ContactsController < ApplicationController
-
   def create
     @contact = Contact.new(contact_params)
     @contact.request = request
-    @contact.deliver
+    begin
+      @contact.deliver
+    rescue StandardError
+      nil
+    end
   end
 
   private
