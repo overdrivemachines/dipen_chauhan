@@ -13,7 +13,8 @@
 <p>
   If the button above doesn't work, paste this link into your web browser:
   <br>
-  <%# Add Login Link %>
+  <%= link_to edit_session_url(@user.login_token, email: @user.email), edit_session_url(@user.login_token, email: @user.email), class: "btn btn-primary" %>
+
 </p>
 
 <p>

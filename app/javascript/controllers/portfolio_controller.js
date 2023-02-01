@@ -6,8 +6,6 @@ export default class extends Controller {
   connect() {
     // this.element.textContent = "Hello World!";
 
-    console.log("hello from hello_controller.js");
-
     // Array of "#portfolioCategories .filter" elements
     const portfolioCategoriesEl = gsap.utils.toArray("#portfolioCategories .filter");
     // Array of .portfolio-item elements
