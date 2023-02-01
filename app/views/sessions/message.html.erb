@@ -1,15 +1,14 @@
-<section id="sessions-page">
-  <div class="container">
-    <div class="row">
-      <div class="title">
-        <h1><%= flash[:title] %></h1>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 col-md-8 message-container">
-          <p><%= flash[:notice] %></p>
-          <%= link_to "OK", root_path, class: "btn btn-primary" %>
-        </div>
-      </div>
+<section class="section-common pt-120 pb-120 login-page">
+  <div class="row">
+    <div class="section-title-three text-center">
+      <div class="water-text"><%= flash[:title] %></div>
+      <h2><%= flash[:title] %></h2>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-xl-12 col-lg-12">
+      <p><%= flash[:notice] %></p>
+      <%= link_to "OK", root_path, class: "eg-btn btn--primary btn--lg ms-2" %>
     </div>
   </div>
 </section>
