@@ -6,12 +6,12 @@ This is the code for my portfolio website: https://www.dipenchauhan.com
 
 Live - https://dipenchauhan.com
 
-# TODO
+# Features
 
 - Add/remove projects with images
-- Sign in single user
-- Auto add projects from my github
-- Project Display Order
+- Single user sign in
+- Projects' display order can be changed
+- Add/remove project categories
 
 # Model
 
@@ -39,6 +39,35 @@ $ bundle config set --local without 'production'
 $ bundle install
 $ bundle lock --add-platform x86_64-linux
 ```
+
+- Emails
+
+  - Go to https://myaccount.google.com/apppasswords and create a new app password
+  - Save password in rails credentials (./edit_credentials.sh)
+
+  ```yml
+  gmail:
+    email: a@gmail.com
+    password: password from previous step
+  ```
+
+  - In production.rb add:
+
+    ```rb
+    config.action_mailer.delivery_method = :smtp
+    host = 'dipenchauhan.com' # replace with your own url
+    config.action_mailer.default_url_options({ host: })
+
+    # SMTP settings for gmail
+    config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      user_name: Rails.application.credentials.dig(:gmail, :email),
+      password: Rails.application.credentials.dig(:gmail, :password),
+      authentication: "plain",
+      enable_starttls_auto: true
+    }
+    ```
 
 ## Deployment instructions
 
