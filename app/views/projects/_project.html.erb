@@ -1,40 +1,42 @@
-<div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="<%= project.category.abbr %>">
-  <div class="portfolio-single-one style-three magnetic-item">
-    <% if project.image.persisted? %>
-      <%= link_to project.live_url, target: "_blank" do %>
-        <%= image_tag project.image_as_medium_thumbnail, class: "img-fluid", alt: "Image" %>
-      <% end %>
-    <% else %>
-      <%= image_tag "placeholder.webp", class: "img-fluid", alt: "Image" %>
-    <% end %>
-    <div class="content">
-      <h3><%= project.title %></h3>
-      <span class="badge rounded-pill text-bg-light"><%= project.category.name %></span>
-      <p><%= project.description %></p>
-      <div class="d-flex justify-content-between">
-        <%= link_to "View Project", project.live_url, target: "_blank" %>
-        <%= link_to "GitHub Code", project.code_url, target: "_blank" %>
-        <% if user_signed_in? %>
-          <%= link_to "Edit", edit_project_path(project) %>
-          <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+<% if user_signed_in? || project.category.name.downcase != "hidden" %>
+  <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="<%= project.category.abbr %>">
+    <div class="portfolio-single-one style-three magnetic-item">
+      <% if project.image.persisted? %>
+        <%= link_to project.live_url, target: "_blank" do %>
+          <%= image_tag project.image_as_medium_thumbnail, class: "img-fluid", alt: "Image" %>
         <% end %>
-      </div>
-      <% if user_signed_in? %>
-        <div class="project-move-actions">
-          <%= link_to [project, {project: {move: "top"}}], data: {turbo_method: :patch} do %>
-            <i class='bx bx-arrow-to-left' ></i>
-          <% end %>
-          <%= link_to [project, {project: {move: "left"}}], data: {turbo_method: :patch} do %>
-            <i class='bx bx-left-arrow-alt'></i>
-          <% end %>
-          <%= link_to [project, {project: {move: "right"}}], data: {turbo_method: :patch} do  %>
-            <i class='bx bx-right-arrow-alt'></i>
-          <% end %>
-          <%= link_to [project, {project: {move: "bottom"}}], data: {turbo_method: :patch} do %>
-            <i class='bx bx-arrow-to-right' ></i>
+      <% else %>
+        <%= image_tag "placeholder.webp", class: "img-fluid", alt: "Image" %>
+      <% end %>
+      <div class="content">
+        <h3><%= project.title %></h3>
+        <span class="badge rounded-pill text-bg-light"><%= project.category.name %></span>
+        <p><%= project.description %></p>
+        <div class="d-flex justify-content-between">
+          <%= link_to "View Project", project.live_url, target: "_blank" %>
+          <%= link_to "GitHub Code", project.code_url, target: "_blank" %>
+          <% if user_signed_in? %>
+            <%= link_to "Edit", edit_project_path(project) %>
+            <%= link_to "Delete", project, data: {"turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
           <% end %>
         </div>
-      <% end %>
+        <% if user_signed_in? %>
+          <div class="project-move-actions">
+            <%= link_to [project, {project: {move: "top"}}], data: {turbo_method: :patch} do %>
+              <i class='bx bx-arrow-to-left' ></i>
+            <% end %>
+            <%= link_to [project, {project: {move: "left"}}], data: {turbo_method: :patch} do %>
+              <i class='bx bx-left-arrow-alt'></i>
+            <% end %>
+            <%= link_to [project, {project: {move: "right"}}], data: {turbo_method: :patch} do  %>
+              <i class='bx bx-right-arrow-alt'></i>
+            <% end %>
+            <%= link_to [project, {project: {move: "bottom"}}], data: {turbo_method: :patch} do %>
+              <i class='bx bx-arrow-to-right' ></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
