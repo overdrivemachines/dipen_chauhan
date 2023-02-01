@@ -20,7 +20,7 @@
             <li class="filter active" data-filter="*">All <span><%= Project.all.size %></span></li>
             <% @categories.each do |category| %>
               <%# Do not show hidden category unless the user is signed in %>
-              <% if user_signed_in? || category.downcase != "hidden" %>
+              <% if user_signed_in? || category.name.downcase != "hidden" %>
                 <li class="filter" data-filter="<%= category.abbr %>">
                   <%= category.name %>
                   <span><%= category.projects.size %></span>
