@@ -28,7 +28,7 @@
         </li>
         <!-- Login / Logout -->
         <li class="menu-item">
-          <% if user_signed_in? %>
+          <% if @is_user_signed_in %>
             <%= link_to "Logout", logout_path, class: "mi-link", data: { hover: "Logout", "turbo-method": :delete } %>
           <% else %>
             <%= link_to "Login", login_path, class: "mi-link", data: { hover: "Login" } %>

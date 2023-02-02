@@ -1,0 +1,557 @@
+=> Booting Puma
+=> Rails 7.0.4.2 application starting in development
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.5 (ruby 3.1.2-p20) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 86253
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+Started GET "/" for ::1 at 2023-02-01 17:27:37 -0800
+  ActiveRecord::SchemaMigration Pluck (0.1ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered sections/_banner.html.erb (Duration: 105.1ms | Allocations: 44789)
+  Rendered sections/_about.html.erb (Duration: 9.8ms | Allocations: 8171)
+  User Load (0.2ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Count (0.4ms)  SELECT COUNT(*) FROM "projects"
+  ↳ app/views/sections/_portfolio.html.erb:20
+  Category Load (0.2ms)  SELECT "categories".* FROM "categories" ORDER BY "categories"."position" ASC
+  ↳ app/views/sections/_portfolio.html.erb:21
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Count (0.3ms)  SELECT COUNT(*) FROM "projects" WHERE "projects"."category_id" = ?  [["category_id", 3]]
+  ↳ app/views/sections/_portfolio.html.erb:26
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.1ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Count (0.3ms)  SELECT COUNT(*) FROM "projects" WHERE "projects"."category_id" = ?  [["category_id", 2]]
+  ↳ app/views/sections/_portfolio.html.erb:26
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Count (0.5ms)  SELECT COUNT(*) FROM "projects" WHERE "projects"."category_id" = ?  [["category_id", 1]]
+  ↳ app/views/sections/_portfolio.html.erb:26
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Count (0.3ms)  SELECT COUNT(*) FROM "projects" WHERE "projects"."category_id" = ?  [["category_id", 6]]
+  ↳ app/views/sections/_portfolio.html.erb:26
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Count (0.3ms)  SELECT COUNT(*) FROM "projects" WHERE "projects"."category_id" = ?  [["category_id", 12]]
+  ↳ app/views/sections/_portfolio.html.erb:26
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Project Load (0.4ms)  SELECT "projects".* FROM "projects" ORDER BY "projects"."position" ASC
+  ↳ app/views/sections/_portfolio.html.erb:54
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Category Load (0.3ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.2ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 7], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 7], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Category Load (0.2ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 15], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 15], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Category Load (0.2ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.2ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 27], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 28], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 28], ["variation_digest", "cAfAf5iAxm52Ff0Mw7wXY2F9d4A="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.2ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 26], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 26], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 26], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 10], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 10], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 10], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 4], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 4], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Category Load (0.2ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 8], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.0ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 8], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 6], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 6], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 5], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 5], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.2ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 9], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 9], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 9], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 11], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 11], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 11], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 12], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.0ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 12], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 13], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 13], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 13], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 14], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 14], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 16], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 16], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 16], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 17], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 17], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.0ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 17], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 18], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 18], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 18], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 19], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 19], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 19], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 20], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 20], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 20], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 21], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 21], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 21], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 22], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 22], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 22], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.2ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 23], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 23], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 23], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 24], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.1ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 24], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 24], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE Category Load (0.0ms)  SELECT "categories".* FROM "categories" WHERE "categories"."id" = ? ORDER BY "categories"."position" ASC LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:2
+  ActiveStorage::Attachment Load (0.1ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?  [["record_id", 25], ["record_type", "Project"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/projects/_project.html.erb:4
+  ActiveStorage::Blob Load (0.0ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?  [["id", 25], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  ActiveStorage::VariantRecord Load (0.1ms)  SELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?  [["blob_id", 25], ["variation_digest", "HXrt4hhEa3AGJn5cDRoyQ9yrwFs="], ["LIMIT", 1]]
+  ↳ app/models/project.rb:32:in `image_as_medium_thumbnail'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Rendered collection of projects/_project.html.erb [24 times] (Duration: 15583.6ms | Allocations: 164358)
+  Rendered sections/_portfolio.html.erb (Duration: 19388.7ms | Allocations: 197755)
+  Rendered contacts/_new.html.erb (Duration: 316.6ms | Allocations: 278147)
+  Rendered home/index.html.erb within layouts/application (Duration: 19822.6ms | Allocations: 529813)
+  CACHE User Load (0.0ms)  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:36:in `current_user'
+  Rendered layouts/_menu.html.erb (Duration: 194.8ms | Allocations: 1856)
+  Rendered layouts/_fixed.html.erb (Duration: 0.8ms | Allocations: 438)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 470)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 20038.6ms | Allocations: 559637)
+Completed 200 OK in 20060ms (Views: 20024.5ms | ActiveRecord: 17.2ms | Allocations: 570214)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZWFkyWmpSc1kzQTROSG96YzJVMWFHTmlZelIyWW5ZNWFYSmxNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpkYWQwcDRZUzFLYjNOWloxWTVaM2d1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25OMXAzU25oaExVcHZjMWxuVmpsbmVDNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NDkuOTEwWiIsInB1ciI6ImJsb2Jfa2V5In19--da01cf5b94b81ca6545abf61293559a9dd9ad734/7ZwJxa-JosYgV9gx.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR1pxY0hkeE5tVndaR0Z0ZERSc2VUbGtkbkYzTjNsdGQyeHFjQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpaME1GSjRYMVJRWTFWNFNrSkVNRXd1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25OblF3VW5oZlZGQmpWWGhLUWtRd1RDNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NDkuODg4WiIsInB1ciI6ImJsb2Jfa2V5In19--ba0f96f8a557fbe1bb4a361785ca3c59ba6ed4f9/6t0Rx_TPcUxJBD0L.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNbkEwYzJ0clpISXhhblJsWldsNFkzQnBabTVqYjNwcWFtZHNZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1Kbk16TXRkMmhwZEdVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRpWnpNekxYZG9hWFJsTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDIzLTAyLTAyVDAxOjMxOjQ5Ljg3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a5ec841dc4069a8a91a6ceb978adb706272e9fd6/bg33-white.jpg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiSEZ2Wm5oMVptTmxhamhvTjJSamJuQXpPWGxzZW1zNWFYQndOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1odE15MW5TbkV5Y1c1RFEwSXdMVmt1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25hRzB6TFdkS2NUSnhia05EUWpBdFdTNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NDkuODMwWiIsInB1ciI6ImJsb2Jfa2V5In19--bbae240e4037fa0881d61cbe8741f5bb48e396b2/hm3-gJq2qnCCB0-Y.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR0p4YTJoa2Eza3hkREZ0YzJ4cU1IRjNNM1ZwWm5SalpubzBhUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1wdk5HcHNMV2RTVURsSVNGSkZRVzR1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25hbTgwYW13dFoxSlFPVWhJVWtWQmJpNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NDkuODQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--399378e68a47381b844c181e3d565a2e704e5c6b/jo4jl-gRP9HHREAn.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"bg33-white"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms | Allocations: 573)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"6t0Rx_TPcUxJBD0L"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 163)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"7ZwJxa-JosYgV9gx"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 189)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"hm3-gJq2qnCCB0-Y"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 166)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"jo4jl-gRP9HHREAn"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 159)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRFowWW5Gak1UUnBlRzk1YjNwc2NEWmtkWEYwY0cwemJuSnVNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpWSVZrbzBVa3d0V1VJeWRsTmZSV2t1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25OVWhXU2pSU1RDMVpRakoyVTE5RmFTNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NDkuOTc5WiIsInB1ciI6ImJsb2Jfa2V5In19--9a220a28b780a6a43c0bba4ff63d23ff8a8ead80/5HVJ4RL-YB2vS_Ei.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkWEZ5YkhCNGNHcHFZM1ozZVd3M2RHbDZaVzV0ZWpSb2NYTXdZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5VeVpEVlFhR3Q1TW5vNVNETkZYekF1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kVEprTlZCb2Eza3llamxJTTBWZk1DNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMDEyWiIsInB1ciI6ImJsb2Jfa2V5In19--b6c291682af711db663fc77a03e76372eadc8af6/u2d5Phky2z9H3E_0.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaR05uYkRJMGJESjVkbTVyT1dZeGVYbHpORzVrTlhJM2MyMWlOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpCblR6UnVSVTAwTVdwUFlsVlpabW91YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25NR2RQTkc1RlRUUXhhazlpVlZsbWFpNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMDczWiIsInB1ciI6ImJsb2Jfa2V5In19--91a5c06b608ba585cbe3a395ee8d26f30063747a/0gO4nEM41jObUYfj.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNbXh5ZDNwbFltNTZiREo1TW1KeU9ISmhlRGgwY3poeWJtZHhZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxGdVJrMUVaRFZPYzJ0dk0yMVRWbkV1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VVzVHVFVSa05VNXphMjh6YlZOV2NTNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMTY2WiIsInB1ciI6ImJsb2Jfa2V5In19--70f3f5bb158412fd7f878640f21adcdc903640d7/QnFMDd5Nsko3mSVq.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjWGhqTlRJeGJYbzBkVzFyZFd4bU16TXhhSGhsWkdneE5IRnZPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtvd1prUlFTMDh0V1ZoZldFUXlUamt1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25TakJtUkZCTFR5MVpXRjlZUkRKT09TNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMDk5WiIsInB1ciI6ImJsb2Jfa2V5In19--1ee38f912a96e34bd5321394a02b33d1a944c578/J0fDPKO-YX_XD2N9.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"5HVJ4RL-YB2vS_Ei"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 162)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"0gO4nEM41jObUYfj"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"u2d5Phky2z9H3E_0"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 596)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms | Allocations: 915)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"QnFMDd5Nsko3mSVq"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms | Allocations: 264)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"J0fDPKO-YX_XD2N9"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlR0psTldSbWQyVXhjWEZwTTJvM09Ib3lOM05zTnpoeGNXOXhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpsWWJYbGtiRmN4TmpoSlJtNXFhSFl1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25PVmh0ZVdSc1Z6RTJPRWxHYm1wb2RpNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMjA2WiIsInB1ciI6ImJsb2Jfa2V5In19--6a7362f1c2a16e92402ce0cd8a54bc653e1895e0/9XmydlW168IFnjhv.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 332)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"9XmydlW168IFnjhv"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRGR4ZFhnemFucHVOSGd4Y1hwaGNESnZaM1pwZW1nNVptSXplZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCNlVUY3dTMmRSTFVsS1h6VktMVEF1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VSHBSTnpCTFoxRXRTVXBmTlVvdE1DNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMjM0WiIsInB1ciI6ImJsb2Jfa2V5In19--ae5a1614535d2bcd23b7b69dbda76adc9fa5956d/PzQ70KgQ-IJ_5J-0.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWE5vWm1sbmIyUnJjbWRvWm5Cc1ozUXpORFV4Y21KblkzRm5kUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5Gb2NXMUliVkpJVjFaUlkxSk9iVVV1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jV2h4YlVodFVraFhWbEZqVWs1dFJTNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMzA2WiIsInB1ciI6ImJsb2Jfa2V5In19--d0e0533932a44123e0b7328b791d57742351d0d3/qhqmHmRHWVQcRNmE.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjbVZtY213eFkzSnJjbms0YlRSeWFYVXhaV2N3YzNWMlluSnBjd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CWmVrUkdiVWxFYWpWeE9VbHhTRVF1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jRmw2UkVadFNVUnFOWEU1U1hGSVJDNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMzMwWiIsInB1ciI6ImJsb2Jfa2V5In19--e9c6862337f90e46836084b113e2adeb2d549fbf/pYzDFmIDj5q9IqHD.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2xzWlhsb1ptaHpNV1JoTURaemFUQnpOV1oxTmpNeWNXZzJjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW01ZmFYZDZWWFF5YWtWMlMwVXRZVkl1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ibDlwZDNwVmRESnFSWFpMUlMxaFVpNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMzIxWiIsInB1ciI6ImJsb2Jfa2V5In19--f61f48812a3bb3a93cb481d28a48a62d83064553/n_iwzUt2jEvKE-aR.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkakYzZW5Oak1ESnZlR0owT0RBeWEyNXliV1kyYWpVNGEybDNaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpnNWEwbDJSMkphYXpRM1QwcE5jVjh1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25PRGxyU1haSFlscHJORGRQU2sxeFh5NXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMzQ0WiIsInB1ciI6ImJsb2Jfa2V5In19--460158586209fe1d4d05648cdebfd88f5057d646/89kIvGbZk47OJMq_.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"PzQ70KgQ-IJ_5J-0"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 218)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"n_iwzUt2jEvKE-aR"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 186)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"qhqmHmRHWVQcRNmE"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 204)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"pYzDFmIDj5q9IqHD"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"89kIvGbZk47OJMq_"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM0ZoYW1wcWJEVTRhbmM0TXpCMmNIQnZNR2N5ZUhVM2NURmlhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1kTlJuVjVkRUY1Y3poTVYzVmxSR2N1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25aMDFHZFhsMFFYbHpPRXhYZFdWRVp5NXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuMzg0WiIsInB1ciI6ImJsb2Jfa2V5In19--5cb25283daa8ff629988035e03bc4b1087fb02af/gMFuytAys8LWueDg.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObUp3T1hoemJqTXhhVGhqYm01aWRqWXhOM3AxTUhwc2NtVnVaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW05S1RWQTJlVkpXWW5oNldscHFhV0l1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25iMHBOVURaNVVsWmllSHBhV21wcFlpNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNDA0WiIsInB1ciI6ImJsb2Jfa2V5In19--8c07f841609d7de2116c6148a1d5a7dc0b35f7f2/oJMP6yRVbxzZZjib.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"gMFuytAys8LWueDg"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 191)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"oJMP6yRVbxzZZjib"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjakZ0T0dJeE1qSmxNbTE0ZG5nMWVEZHRkM3B2TVRWaFpHWTVjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1WcmRESjNSV293VGxwNFVHNWxOalV1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25aV3QwTW5kRmFqQk9XbmhRYm1VMk5TNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNDM4WiIsInB1ciI6ImJsb2Jfa2V5In19--d762f9c018c714d3f03c9cef26317dff48ca9b18/ekt2wEj0NZxPne65.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV295Y1RrMk9UZGtPV1UxZEhaMWVHRjBiWEZwZUdVemQyOWljQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpnNU1sWkxOVGhaVEY5TVIweFRZazB1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25PRGt5VmtzMU9GbE1YMHhIVEZOaVRTNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNDIwWiIsInB1ciI6ImJsb2Jfa2V5In19--c778021cdcaa59d755af992e0019d9f102db4471/892VK58YL_LGLSbM.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEU0TTNZMWJXaGxlbkE0Y1c4MU5YUmxNbTg0WldNeGVURTVjd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCTVRXSlVUazVHVVhwVVJrZHRUbkl1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VRXhOWWxST1RrWlJlbFJHUjIxT2NpNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNDYwWiIsInB1ciI6ImJsb2Jfa2V5In19--ddf46f58aa2b886fc7d02031b7700ffd63e8bf6e/PLMbTNNFQzTFGmNr.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaMmt4Y0RWbWFXUmpNMjVsYUdjMlpUTTBiR1Z2YVdobGIydHRkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWs5MlJIRnhaMFpWWVhOa2FFNVZRemt1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25UM1pFY1hGblJsVmhjMlJvVGxWRE9TNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNDg4WiIsInB1ciI6ImJsb2Jfa2V5In19--0eabb5e71c77fd903017b0c3d0432e8e1a6bec12/OvDqqgFUasdhNUC9.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPWEl6TlRWb2VEaHNZbnA1Wm1SeVptSnJObVowYW5Kd09YZzRad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5kWFMxVTJTSEpuTjB0UGQzTm1UMkV1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25kMWRMVlRaSWNtYzNTMDkzYzJaUFlTNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNTE0WiIsInB1ciI6ImJsb2Jfa2V5In19--3d1c2fff4e9e681b182b3ab576fcfd6b939219aa/wWKU6Hrg7KOwsfOa.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"ekt2wEj0NZxPne65"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 192)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"PLMbTNNFQzTFGmNr"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 254)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OvDqqgFUasdhNUC9"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 275)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"892VK58YL_LGLSbM"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"wWKU6Hrg7KOwsfOa"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZWG8zYjNoamNuaG9NV3AyZW1FNGVtOHlaekJyYjNSdU9XZHlZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1OdE9HWTNURnBDTFVkclRuSktiM1F1YW5CbFp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZMjA0WmpkTVdrSXRSMnRPY2twdmRDNXFjR1ZuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjMtMDItMDJUMDE6MzE6NTAuNTM4WiIsInB1ciI6ImJsb2Jfa2V5In19--baaed402b1a67f8b8224977223be507b499d3920/cm8f7LZB-GkNrJot.jpeg" for ::1 at 2023-02-01 17:27:58 -0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"cm8f7LZB-GkNrJot"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 169)
+
+
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2023-02-01 17:28:04 -0800 ===
+- Goodbye!
+Exiting

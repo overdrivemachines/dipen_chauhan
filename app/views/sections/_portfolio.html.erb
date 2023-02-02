@@ -5,7 +5,7 @@
         <div class="water-text">Portfolio</div>
         <h2 id="portfolio">
           Portfolio
-          <% if user_signed_in? %>
+          <% if @is_user_signed_in %>
             <%= link_to new_project_path do %>
               <i class='bx bx-plus'></i>
             <% end %>
@@ -20,11 +20,11 @@
             <li class="filter active" data-filter="*">All <span><%= Project.all.size %></span></li>
             <% @categories.each do |category| %>
               <%# Do not show hidden category unless the user is signed in %>
-              <% if user_signed_in? || category.name.downcase != "hidden" %>
+              <% if @is_user_signed_in || category.name.downcase != "hidden" %>
                 <li class="filter" data-filter="<%= category.abbr %>">
                   <%= category.name %>
                   <span><%= category.projects.size %></span>
-                  <% if user_signed_in? %>
+                  <% if @is_user_signed_in %>
                     <span>
                       <%= link_to "Move Left", [category, {category: {move: "left"}}], data: {turbo_method: :patch}  %>
                     </span>
@@ -39,7 +39,7 @@
             <% end %>
             <%# <li class="filter" data-filter="rails">Ruby on Rails <span>3</span></li> %>
 
-            <% if user_signed_in? %>
+            <% if @is_user_signed_in %>
               <li>
                 <%= link_to new_category_path do %>
                   <i class='bx bx-plus'></i>

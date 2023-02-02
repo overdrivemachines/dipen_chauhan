@@ -4,7 +4,11 @@ import { Flip } from "gsap/Flip";
 gsap.registerPlugin(Flip);
 export default class extends Controller {
   connect() {
-    // this.element.textContent = "Hello World!";
+    // Array of ".project-move-actions a" elements
+    const projectMoveLinks = gsap.utils.toArray(".project-move-actions a");
+
+    // Loader
+    const loader = document.getElementById("loader");
 
     // Array of "#portfolioCategories .filter" elements
     const portfolioCategoriesEl = gsap.utils.toArray("#portfolioCategories .filter");
@@ -62,5 +66,14 @@ export default class extends Controller {
         });
       })
     );
+
+    // When projectMoveLinks are clicked, show the loader
+    projectMoveLinks.forEach((link) =>
+      link.addEventListener("click", () => {
+        loader.style.display = "flex";
+      })
+    );
+
+    loader.style.display = "none";
   }
 }

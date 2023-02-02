@@ -118,6 +118,12 @@ document.addEventListener("turbo:load", () => {
   }
 
   window.returnToTop = returnToTop;
+
+  /* ---------------------------------------------
+  Loader
+  --------------------------------------------- */
+  const loader = document.getElementById("loader");
+  loader.style.display = "none";
 });
 
 /* ---------------------------------------------
