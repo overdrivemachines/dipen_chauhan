@@ -45,6 +45,8 @@ export default class extends Controller {
         if (selectedCategory == "*") {
           // display all items
           portfolioItemsEl.forEach((i) => (i.style.display = "block"));
+        } else if (selectedCategory == "+") {
+          portfolioItemsEl.forEach((i) => (i.style.display = i.dataset.featured == "true" ? "block" : "none"));
         } else {
           // display only items that match
           portfolioItemsEl.forEach((i) => (i.style.display = i.dataset.category == selectedCategory ? "block" : "none"));

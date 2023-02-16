@@ -1,6 +1,6 @@
 <% category = project.category %>
 <% if @is_user_signed_in || category.name.downcase != "hidden" %>
-  <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="<%= category.abbr %>">
+  <div class="col-lg-4 col-md-6 col-sm-6 grid-item portfolio-item" data-category="<%= category.abbr %>" data-featured="<%= project.featured.to_s %>">
     <div class="portfolio-single-one style-three magnetic-item">
       <% if project.image.persisted? %>
         <%= link_to project.live_url, target: "_blank" do %>

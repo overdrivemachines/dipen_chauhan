@@ -17,7 +17,8 @@
       <div class="col-lg-12">
         <div class="filters filter-button-group">
           <ul class="d-flex justify-content-center flex-wrap" id="portfolioCategories">
-            <li class="filter active" data-filter="*">All <span><%= Project.all.size %></span></li>
+            <li class="filter active" data-filter="+">Featured</li>
+            <li class="filter" data-filter="*">All <span><%= Project.all.size %></span></li>
             <% @categories.each do |category| %>
               <%# Do not show hidden category unless the user is signed in %>
               <% if @is_user_signed_in || category.name.downcase != "hidden" %>

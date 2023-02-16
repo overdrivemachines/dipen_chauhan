@@ -1538,7 +1538,8 @@ header.style-1 {
       }
 
       &.active {
-        color: var(--text-light-one);
+        // color: var(--text-light-one);
+        color: var(--color-red);
         span {
           // opacity: 1;
           color: var(--text-light-one);
