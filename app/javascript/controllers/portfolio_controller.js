@@ -77,5 +77,8 @@ export default class extends Controller {
     );
 
     loader.style.display = "none";
+
+    // show the featured category by default
+    document.getElementById("category-featured").click();
   }
 }
