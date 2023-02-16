@@ -10,14 +10,6 @@ document.addEventListener("turbo:load", () => {
   const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl));
 
   /* ---------------------------------------------
-  Circletype
-  --------------------------------------------- */
-  let CircleTypeText1 = document.getElementById("CircleTypeText1");
-  if (CircleTypeText1 != null) {
-    new CircleType(CircleTypeText1);
-  }
-
-  /* ---------------------------------------------
   My Name Text Effect
   --------------------------------------------- */
   const myNameEl = document.querySelector(".my-name");
@@ -125,6 +117,14 @@ document.addEventListener("turbo:load", () => {
   const loader = document.getElementById("loader");
   loader.style.display = "none";
 });
+
+/* ---------------------------------------------
+Circletype
+--------------------------------------------- */
+let CircleTypeText1 = document.getElementById("CircleTypeText1");
+if (CircleTypeText1 != null) {
+  new CircleType(CircleTypeText1);
+}
 
 /* ---------------------------------------------
 Portfolio Filter
