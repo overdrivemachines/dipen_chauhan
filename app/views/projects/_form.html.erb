@@ -60,6 +60,15 @@
           </div>
         </div>
 
+        <div class="col-lg-12">
+          <div class="form-inner">
+            <div class="form-check form-switch">
+              <%= form.label :featured, class: "form-check-label" %>
+              <%= form.check_box :featured, class: "form-check-input" %>
+            </div>
+          </div>
+        </div>
+
         <div class="mt-4">
           <button type="submit" class="eg-btn btn--primary btn--lg">Save</button>
           <%= link_to "Cancel", request.referer.present? ? request.referer : root_path, class: "eg-btn btn--primary-three btn--lg ms-2" %>
