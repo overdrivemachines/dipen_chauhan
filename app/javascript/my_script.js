@@ -1,6 +1,5 @@
 import { gsap, TimelineMax, Power1 } from "gsap";
 import { Flip } from "gsap/Flip";
-import CircleType from "circletype";
 
 gsap.registerPlugin(Flip);
 
@@ -121,10 +120,7 @@ document.addEventListener("turbo:load", () => {
 /* ---------------------------------------------
 Circletype
 --------------------------------------------- */
-let CircleTypeText1 = document.getElementById("CircleTypeText1");
-if (CircleTypeText1 != null) {
-  new CircleType(CircleTypeText1);
-}
+// Moved to home_controller.js
 
 /* ---------------------------------------------
 Portfolio Filter
