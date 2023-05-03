@@ -12,19 +12,23 @@
       <ul class="menu-list">
         <!-- Home -->
         <li class="menu-item">
-          <%= link_to "Home", root_path(anchor: "home"), class: "mi-link", data: { hover: "Home" } %>
+          <a href="/#home" class="mi-link" data-hover="home">Home</a>
+          <%# <%= link_to "Home", root_path(anchor: "home"), class: "mi-link", data: { hover: "Home" } %>
         </li>
         <!-- About -->
         <li class="menu-item">
-          <%= link_to "About", root_path(anchor: "about"), class: "mi-link", data: { hover: "About" } %>
+          <a href="/#about" class="mi-link" data-hover="about">About</a>
+          <%# link_to "About", root_path(anchor: "about"), class: "mi-link", data: { hover: "About" } %>
         </li>
         <!-- Portfolio -->
         <li class="menu-item">
-          <%= link_to "Portfolio", root_path(anchor: "portfolio"), class: "mi-link", data: { hover: "Portfolio" } %>
+          <a href="/#portfolio" class="mi-link" data-hover="portfolio">Portfolio</a>
+          <%# link_to "Portfolio", root_path(anchor: "portfolio"), class: "mi-link", data: { hover: "Portfolio" } %>
         </li>
         <!-- Contact -->
         <li class="menu-item">
-          <%= link_to "Contact", root_path(anchor: "hire-me"), class: "mi-link", data: { hover: "Contact" } %>
+          <a href="/#hire-me" class="mi-link" data-hover="contact">Contact</a>
+          <%# link_to "Contact", root_path(anchor: "hire-me"), class: "mi-link", data: { hover: "Contact" } %>
         </li>
         <!-- Login / Logout -->
         <li class="menu-item">
