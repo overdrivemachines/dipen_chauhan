@@ -3,7 +3,7 @@ import { Flip } from "gsap/Flip";
 
 gsap.registerPlugin(Flip);
 
-// This function runs on every page "load"
+// This function runs on every page "load". Fires once after the initial page load, and again after every Turbo visit.
 document.addEventListener("turbo:load", () => {
   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
   const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl));
