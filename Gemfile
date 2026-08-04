@@ -24,7 +24,7 @@ gem "bootsnap", require: false # Reduces boot times through caching; required in
 
 gem "kamal", require: false # Deploy this application anywhere as a Docker container
 gem "thruster", require: false # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma
-gem "image_processing", "~> 1.2" # Use Active Storage variants
+gem "image_processing", "~> 2.0" # Use Active Storage variants
 
 
 gem "validate_url" # adds the capability of validating URLs to ActiveRecord and ActiveModel.
