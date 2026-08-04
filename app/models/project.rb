@@ -29,7 +29,7 @@ class Project < ApplicationRecord
   # does not resize images smaller than 350 pixels
   # https://github.com/janko/image_processing/blob/master/doc/vips.md
   def image_as_medium_thumbnail
-    image.variant(resize_to_fill: [350, 350]).processed
+    image.variant(resize_to_fill: [ 350, 350 ]).processed
   end
 
   private
