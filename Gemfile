@@ -51,7 +51,7 @@ group :development do
   gem "erb-formatter" # Format ERB Files
   gem "letter_opener" # Preview emails
 
-  
+
   gem "chusaku", require: false # Annotate controllers
   gem "down" # Download files for seed data
   gem "pexels" # Get images from pexels.com

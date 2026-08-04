@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  resources :categories, except: [:show, :index]
-  resources :projects, except: [:show, :index]
-  root to: 'home#index'
+  resources :categories, except: [ :show, :index ]
+  resources :projects, except: [ :show, :index ]
+  root to: "home#index"
 
   post "/contacts", to: "contacts#create", as: "contacts"
 
