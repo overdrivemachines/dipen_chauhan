@@ -1,3 +1,4 @@
+import * as bootstrap from "bootstrap";
 import { gsap, TimelineMax, Power1 } from "gsap";
 import { Flip } from "gsap/Flip";
 
@@ -34,7 +35,7 @@ document.addEventListener("turbo:load", () => {
           scale: 0.8,
           ease: Power1.easeOut,
         },
-        0.15
+        0.15,
       )
       .to(lettersArray, 0.5, { alpha: 0, ease: Power1.easeOut }, "+=1.2");
   }

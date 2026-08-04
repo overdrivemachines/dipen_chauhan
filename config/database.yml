@@ -1,31 +1,56 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
+# PostgreSQL. Versions 9.5 and up are supported.
 #
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem "sqlite3"
+# Install the pg driver:
+#   gem install pg
+# On macOS with Homebrew:
+#   gem install pg -- --with-pg-config=/opt/homebrew/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem "pg"
 #
 default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-
-development:
-  <<: *default
   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: dipen_chauhan
-  username: deploy
-  password: <%= Rails.application.credentials.pg_password %>
+  production:
+  primary: &primary_production
+    <<: *default
+    database: dipen_chauhan
+    username: deploy
+    password: <%= Rails.application.credentials.pg_password %>
+  cache:
+    <<: *primary_production
+    database: dipen_chauhan_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: dipen_chauhan_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_production
+    database: dipen_chauhan_cable
+    migrations_paths: db/cable_migrate
+  
