@@ -41,7 +41,7 @@ group :development, :test do
   gem "brakeman", require: false # Static analysis for security vulnerabilities
   gem "rubocop-rails-omakase", require: false # Omakase Ruby styling
 
-  gem "sqlite3", "~> 2.9.5" # Use SQLite3 as the database for Active Record
+  gem "sqlite3", "~> 2.9.6" # Use SQLite3 as the database for Active Record
 end
 
 group :development do
