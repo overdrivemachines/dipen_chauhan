@@ -11,9 +11,9 @@
 #
 
 one:
-  name: MyString
-  abbr: MyString
+  name: Hidden
+  abbr: Hidden
 
 two:
-  name: MyString
-  abbr: MyString
+  name: Design
+  abbr: Design

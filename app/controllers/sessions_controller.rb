@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
   # Sends email containing link to login
   def create
     # Find the user based on their email provided in the login form
-    user = User.find_by(email: params[:session][:email].downcase)
+    email = params[:session][:email].to_s.strip.downcase
+    user = User.find_by(email:)
 
     # if user exists send the login email
     if user

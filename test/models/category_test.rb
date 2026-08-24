@@ -12,7 +12,12 @@
 require "test_helper"
 
 class CategoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "strips whitespace from name and abbr" do
+    category = Category.new(name: "  Design  ", abbr: "  D  ")
+
+    category.valid?
+
+    assert_equal "Design", category.name
+    assert_equal "D", category.abbr
+  end
 end

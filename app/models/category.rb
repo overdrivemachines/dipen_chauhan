@@ -10,6 +10,8 @@
 #  position   :integer
 #
 class Category < ApplicationRecord
+  auto_strip_attributes :name, :abbr
+
   has_many :projects
   # Before a category is destroyed, all projects of this category
   # need to be reassigned different categories
