@@ -12,6 +12,8 @@
 #  login_sent_at :datetime
 #
 class User < ApplicationRecord
+  auto_strip_attributes :email, :first_name, :last_name
+
   attr_accessor :login_token
 
   has_secure_password :login

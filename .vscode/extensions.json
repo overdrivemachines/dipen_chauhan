@@ -1,0 +1,3 @@
+{
+  "recommendations": ["Shopify.ruby-lsp", "erbfmt.erbfmt-vscode", "dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "stylelint.vscode-stylelint"]
+}

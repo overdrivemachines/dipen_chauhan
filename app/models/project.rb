@@ -14,9 +14,10 @@
 #  position      :integer
 #
 class Project < ApplicationRecord
+  auto_strip_attributes :title, :description, :code_url, :live_url
+
   has_one_attached :image
   belongs_to :category
-  before_save :remove_space
   acts_as_list # acts_as_list gem
   default_scope { order(position: :asc) }
 
@@ -30,14 +31,5 @@ class Project < ApplicationRecord
   # https://github.com/janko/image_processing/blob/master/doc/vips.md
   def image_as_medium_thumbnail
     image.variant(resize_to_fill: [ 350, 350 ]).processed
-  end
-
-  private
-
-  def remove_space
-    title.strip
-    description.strip
-    live_url.strip
-    code_url.strip
   end
 end

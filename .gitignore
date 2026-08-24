@@ -42,3 +42,7 @@
 
 # Ignore images downloaded for seed data
 db/seeds/*
+
+# Ignore SQLite databases and runtime journal files
+/db/*.sqlite3
+/db/*.sqlite3-*
