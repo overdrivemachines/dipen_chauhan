@@ -35,7 +35,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  production:
   primary: &primary_production
     <<: *default
     database: dipen_chauhan
