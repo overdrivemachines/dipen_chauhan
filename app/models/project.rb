@@ -3,15 +3,20 @@
 # Table name: projects
 #
 #  id            :integer          not null, primary key
-#  title         :string
+#  code_url      :string
 #  description   :string
-#  live_url      :string
 #  display_order :integer
+#  featured      :boolean          default(FALSE)
+#  live_url      :string
+#  position      :integer
+#  title         :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  category_id   :integer          not null
-#  code_url      :string
-#  position      :integer
+#
+# Foreign Keys
+#
+#  category_id  (category_id => categories.id)
 #
 class Project < ApplicationRecord
   auto_strip_attributes :title, :description, :code_url, :live_url
