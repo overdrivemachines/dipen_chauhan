@@ -3,11 +3,11 @@
 # Table name: categories
 #
 #  id         :integer          not null, primary key
-#  name       :string
 #  abbr       :string
+#  name       :string
+#  position   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  position   :integer
 #
 class Category < ApplicationRecord
   auto_strip_attributes :name, :abbr
