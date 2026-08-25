@@ -1,4 +1,8 @@
-# User.create(email: "get.dipen@gmail.com", first_name: "Dipen", last_name: "Chauhan", login: "helloworld")
+User.find_or_create_by!(email: "get.dipen@gmail.com") do |user|
+  user.first_name = "Dipen"
+  user.last_name = "Chauhan"
+  user.login = "helloworld"
+end
 
 # Category.create(name: "Hidden", abbr: "Hidden")
 # Category.create(name: "Ruby on Rails", abbr: "RoR")
