@@ -3,11 +3,123 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style>
-      /* Email styles need to be inline */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #101010;
+        color: #acacac;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      .email-shell {
+        width: 100%;
+        background-color: #101010;
+      }
+
+      .email-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .email-card {
+        background-color: #191b1d;
+        border: 1px solid #303336;
+      }
+
+      .email-header {
+        padding: 32px 40px 24px;
+        border-bottom: 3px solid #e30613;
+      }
+
+      .email-brand {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .email-content {
+        padding: 40px;
+      }
+
+      .email-title {
+        margin: 0 0 20px;
+        color: #ffffff;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      .email-copy {
+        margin: 0 0 20px;
+        color: #acacac;
+        font-size: 16px;
+      }
+
+      .email-button {
+        display: inline-block;
+        padding: 14px 28px;
+        background-color: #e30613;
+        color: #ffffff !important;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .email-link {
+        color: #e30613;
+        word-break: break-all;
+      }
+
+      .email-fallback {
+        padding: 20px;
+        background-color: #101010;
+        color: #858585;
+        font-size: 13px;
+      }
+
+      .email-footer {
+        padding: 24px 40px 32px;
+        color: #686868;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 620px) {
+        .email-header,
+        .email-content,
+        .email-footer {
+          padding-right: 24px !important;
+          padding-left: 24px !important;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <%= yield %>
+    <table class="email-shell" role="presentation" width="100%">
+      <tr>
+        <td align="center" style="padding: 32px 16px;">
+          <table class="email-container" role="presentation" width="100%">
+            <tr>
+              <td class="email-card">
+                <%= yield %>
+              </td>
+            </tr>
+            <tr>
+              <td class="email-footer">
+                Dipen Chauhan's Portfolio
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
