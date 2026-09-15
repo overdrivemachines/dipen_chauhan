@@ -22,7 +22,7 @@ gem "thruster", require: false # Add HTTP asset caching/compression and X-Sendfi
 
 gem "image_processing", "~> 1.2" # Use Active Storage variants
 
-gem "auto_strip_attributes", "~> 2.6" # Remove unnecessary whitespaces from ActiveRecord or ActiveModel attributes
+gem "auto_strip_attributes", "~> 3.0" # Remove unnecessary whitespaces from ActiveRecord or ActiveModel attributes
 gem "validate_url" # adds the capability of validating URLs to ActiveRecord and ActiveModel.
 gem "premailer-rails", "~> 1.12" # Inline email CSS before delivery.
 gem "bcrypt" # used for password
