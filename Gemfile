@@ -62,5 +62,5 @@ group :development do
 end
 
 group :production do
-  gem "pg", "~> 1.6" # Use postgresql as the database for AR
+  gem "pg", "~> 1.7" # Use postgresql as the database for AR
 end
